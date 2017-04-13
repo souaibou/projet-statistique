@@ -34,4 +34,5 @@ var app=angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .value('API_URL', 'http://localhost:3000/api/');
