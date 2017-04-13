@@ -6,6 +6,10 @@
   "gitech1": {
   	"name": "gitech1",
   	"connector": "mysql",
-  	"url": "mysql://root@localhost:3307/gitech1"
+    "host": "localhost",
+    "port": 8889,
+    "database":"gitech1",
+    "username": "souaibou",
+    "password": "passer"
   }
 }
