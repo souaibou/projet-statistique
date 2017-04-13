@@ -1,0 +1,95 @@
+{
+  "name": "uniten",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "gitech1",
+      "table": "unitens"
+    },
+    "relations": {
+      "ufr": {
+        "model": "ufr",
+        "type": "belongsTo",
+        "foreignKey": "idufr"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "id": 1,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idufr": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idUfr",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idprogramme": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idProgramme",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "nom": {
+      "type": "String",
+      "required": true,
+      "length": 75,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "nom",
+        "dataType": "varchar",
+        "dataLength": 75,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "nbcredits": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 3,
+      "scale": 0,
+      "mysql": {
+        "columnName": "nbCredits",
+        "dataType": "tinyint",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "name": "client",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "gitech1",
+      "table": "clients"
+    },
+    "relations": {
+      "personne": {
+        "model": "personne",
+        "type": "belongsTo",
+        "foreignKey": "auteur"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "id": 1,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "auteur": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "mysql": {
+        "columnName": "auteur",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "etablissement": {
+      "type": "String",
+      "required": true,
+      "length": 125,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "etablissement",
+        "dataType": "varchar",
+        "dataLength": 125,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "adresse": {
+      "type": "String",
+      "required": true,
+      "length": 125,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "adresse",
+        "dataType": "varchar",
+        "dataLength": 125,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "email": {
+      "type": "String",
+      "required": true,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "email",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "telephone": {
+      "type": "String",
+      "required": true,
+      "length": 20,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "telephone",
+        "dataType": "varchar",
+        "dataLength": 20,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "prenomcontact": {
+      "type": "String",
+      "required": true,
+      "length": 40,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "prenomContact",
+        "dataType": "varchar",
+        "dataLength": 40,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "nomcontact": {
+      "type": "String",
+      "required": true,
+      "length": 40,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "nomContact",
+        "dataType": "varchar",
+        "dataLength": 40,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "fonctioncontact": {
+      "type": "String",
+      "required": true,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "fonctionContact",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "statut": {
+      "type": "String",
+      "required": true,
+      "length": 13,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "statut",
+        "dataType": "enum",
+        "dataLength": 13,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "details": {
+      "type": "String",
+      "required": true,
+      "length": 65535,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "details",
+        "dataType": "text",
+        "dataLength": 65535,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "dernieremisajour": {
+      "type": "Date",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "derniereMisAJour",
+        "dataType": "timestamp",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    }
+  }
+}

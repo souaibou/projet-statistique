@@ -1,0 +1,85 @@
+{
+  "name": "matieremaquette",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "gitech1",
+      "table": "matieremaquettes"
+    },
+    "relations": {
+      "maquette": {
+        "model": "maquette",
+        "type": "belongsTo",
+        "foreignKey": "idmaquette"
+      },
+      "matiere": {
+        "model": "matiere",
+        "type": "belongsTo",
+        "foreignKey": "idmatiere"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "id": 1,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idmatiere": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idMatiere",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "idmaquette": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idMaquette",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idunitens": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idUnitEns",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "name": "matiere",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "gitech1",
+      "table": "matieres"
+    },
+    "relations": {
+      "departement": {
+        "model": "departement",
+        "type": "belongsTo",
+        "foreignKey": "iddepartement"
+      },
+      "personne": {
+        "model": "personne",
+        "type": "belongsTo",
+        "foreignKey": "idprofpardefaut"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "id": 1,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "sigle": {
+      "type": "String",
+      "required": false,
+      "length": 15,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "sigle",
+        "dataType": "varchar",
+        "dataLength": 15,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "titre": {
+      "type": "String",
+      "required": true,
+      "length": 75,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "titre",
+        "dataType": "varchar",
+        "dataLength": 75,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "label": {
+      "type": "String",
+      "required": true,
+      "length": 75,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "label",
+        "dataType": "varchar",
+        "dataLength": 75,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "description": {
+      "type": "String",
+      "required": false,
+      "length": 65535,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "description",
+        "dataType": "text",
+        "dataLength": 65535,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "nbcredits": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 3,
+      "scale": 0,
+      "mysql": {
+        "columnName": "nbCredits",
+        "dataType": "tinyint",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "iddepartement": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idDepartement",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idprofpardefaut": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idProfParDefaut",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    }
+  }
+}

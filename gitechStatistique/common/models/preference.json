@@ -1,0 +1,665 @@
+{
+  "name": "preference",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "gitech1",
+      "table": "preferences"
+    },
+    "relations": {
+      "bareme": {
+        "model": "bareme",
+        "type": "belongsTo",
+        "foreignKey": "idbareme"
+      },
+      "template": {
+        "model": "template",
+        "type": "belongsTo",
+        "foreignKey": "templatefacture"
+      },
+      "anneescolaire": {
+        "model": "anneescolaire",
+        "type": "belongsTo",
+        "foreignKey": "idanneescolairepardefaut"
+      },
+      "session": {
+        "model": "session",
+        "type": "belongsTo",
+        "foreignKey": "idsessionpardefaut"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 3,
+      "scale": 0,
+      "id": 1,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "tinyint",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "nometablissement": {
+      "type": "String",
+      "required": true,
+      "length": 255,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "nomEtablissement",
+        "dataType": "varchar",
+        "dataLength": 255,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "labelsession": {
+      "type": "String",
+      "required": true,
+      "length": 25,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "labelSession",
+        "dataType": "varchar",
+        "dataLength": 25,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "nbdecimals": {
+      "type": "String",
+      "required": true,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "nbDecimals",
+        "dataType": "enum",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "langue": {
+      "type": "String",
+      "required": true,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "langue",
+        "dataType": "enum",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "nationalitepardefaut": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "nationaliteParDefaut",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "choixue": {
+      "type": "String",
+      "required": true,
+      "length": 7,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "choixUE",
+        "dataType": "enum",
+        "dataLength": 7,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "idbareme": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idBareme",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "templatereleve": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "templateReleve",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "templatebulletin": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "templateBulletin",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "templateattinscription": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "templateAttInscription",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "templateattreussite": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "templateAttReussite",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "templateattdiplome": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "templateAttDiplome",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "templatefacture": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "templateFacture",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "templatecarteetudiant": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "templateCarteEtudiant",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "templatecarteetudiantverso": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "templateCarteEtudiantVerso",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "jourdebuthoraire": {
+      "type": "String",
+      "required": true,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "jourDebutHoraire",
+        "dataType": "enum",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "jourfinhoraire": {
+      "type": "String",
+      "required": true,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "jourFinHoraire",
+        "dataType": "enum",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "eleveouetudiant": {
+      "type": "String",
+      "required": true,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "EleveOuEtudiant",
+        "dataType": "enum",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "choixclasse": {
+      "type": "String",
+      "required": true,
+      "length": 11,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "choixClasse",
+        "dataType": "enum",
+        "dataLength": 11,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "formulemoyennesession": {
+      "type": "String",
+      "required": true,
+      "length": 33,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "formuleMoyenneSession",
+        "dataType": "enum",
+        "dataLength": 33,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "formulemoyenneannuelle": {
+      "type": "String",
+      "required": true,
+      "length": 51,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "formuleMoyenneAnnuelle",
+        "dataType": "enum",
+        "dataLength": 51,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "connexionprofesseur": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "connexionProfesseur",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "connexionetudiant": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "connexionEtudiant",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "connexiontuteur": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "connexionTuteur",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "accesetudiantcomptabilite": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "accesEtudiantComptabilite",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "accesetudiantclasse": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "accesEtudiantClasse",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "modificationof": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "modificationOF",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "changermdpetudiant": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "changerMdpEtudiant",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "changermdpprofesseur": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "changerMdpProfesseur",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "changermdppersonel": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "changerMdpPersonel",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "comptetuteur": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "compteTuteur",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "premiermoisanneescolaire": {
+      "type": "String",
+      "required": false,
+      "length": 9,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "premierMoisAnneeScolaire",
+        "dataType": "enum",
+        "dataLength": 9,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "labelidentificationnationale": {
+      "type": "String",
+      "required": true,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "labelIdentificationNationale",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "labelmatricule": {
+      "type": "String",
+      "required": true,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "labelMatricule",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "labelunitedeformation": {
+      "type": "String",
+      "required": true,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "labelUniteDeFormation",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "labeldepartement": {
+      "type": "String",
+      "required": true,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "labelDepartement",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "idanneescolairepardefaut": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idAnneeScolaireParDefaut",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "idsessionpardefaut": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idSessionParDefaut",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "seuilrepechagedeliberation": {
+      "type": "String",
+      "required": true,
+      "length": 10,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "seuilRepechageDeliberation",
+        "dataType": "varchar",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "modificationdenoteapresdeliberation": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "modificationDeNoteApresDeliberation",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "visibilitenotesauxetudiants": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "visibiliteNotesAuxEtudiants",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    }
+  }
+}

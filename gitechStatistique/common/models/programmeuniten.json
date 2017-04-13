@@ -1,0 +1,70 @@
+{
+  "name": "programmeuniten",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "gitech1",
+      "table": "programmeunitens"
+    },
+    "relations": {
+      "programme": {
+        "model": "programme",
+        "type": "belongsTo",
+        "foreignKey": "idprogramme"
+      },
+      "uniten": {
+        "model": "uniten",
+        "type": "belongsTo",
+        "foreignKey": "idunitens"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "id": 1,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idprogramme": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idProgramme",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idunitens": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idUnitEns",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    }
+  }
+}

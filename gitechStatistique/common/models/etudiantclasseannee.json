@@ -1,0 +1,180 @@
+{
+  "name": "etudiantclasseannee",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "gitech1",
+      "table": "etudiantclasseannees"
+    },
+    "relations": {
+      "classeannee": {
+        "model": "classeannee",
+        "type": "belongsTo",
+        "foreignKey": "idclasseannee"
+      },
+      "etudiant": {
+        "model": "etudiant",
+        "type": "belongsTo",
+        "foreignKey": "idetudiant"
+      },
+      "groupe": {
+        "model": "groupe",
+        "type": "belongsTo",
+        "foreignKey": "idgroupe"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "id": 1,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idetudiant": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idEtudiant",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idclasseannee": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idClasseAnnee",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idgroupe": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idGroupe",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "moyenne": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 12,
+      "scale": null,
+      "mysql": {
+        "columnName": "moyenne",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 12,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "rang": {
+      "type": "String",
+      "required": false,
+      "length": 14,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "rang",
+        "dataType": "varchar",
+        "dataLength": 14,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "statut": {
+      "type": "String",
+      "required": true,
+      "length": 36,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "statut",
+        "dataType": "enum",
+        "dataLength": 36,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "resultat": {
+      "type": "String",
+      "required": true,
+      "length": 10,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "resultat",
+        "dataType": "enum",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "mention": {
+      "type": "String",
+      "required": true,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "mention",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "statutdeliberation": {
+      "type": "String",
+      "required": true,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "statutDeliberation",
+        "dataType": "enum",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    }
+  }
+}

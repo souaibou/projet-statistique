@@ -1,0 +1,205 @@
+{
+  "name": "template",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "gitech1",
+      "table": "templates"
+    },
+    "relations": {
+      "templatetableau": {
+        "model": "templatetableau",
+        "type": "belongsTo",
+        "foreignKey": "idtemplatetableau"
+      },
+      "modelebulletin": {
+        "model": "modelebulletin",
+        "type": "belongsTo",
+        "foreignKey": "idmodelbulletin"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "id": 1,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "type": {
+      "type": "String",
+      "required": true,
+      "length": 29,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "type",
+        "dataType": "enum",
+        "dataLength": 29,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "nom": {
+      "type": "String",
+      "required": true,
+      "length": 75,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "nom",
+        "dataType": "varchar",
+        "dataLength": 75,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "cible": {
+      "type": "String",
+      "required": true,
+      "length": 255,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "cible",
+        "dataType": "varchar",
+        "dataLength": 255,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "disposition": {
+      "type": "String",
+      "required": true,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "disposition",
+        "dataType": "enum",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "idmodelbulletin": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idModelBulletin",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "idtemplatetableau": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idTemplateTableau",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "nblignespremierepage": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 3,
+      "scale": 0,
+      "mysql": {
+        "columnName": "nbLignesPremierePage",
+        "dataType": "tinyint",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "nblignesparpage": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 3,
+      "scale": 0,
+      "mysql": {
+        "columnName": "nbLignesParPage",
+        "dataType": "tinyint",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "margehauttableau": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 12,
+      "scale": null,
+      "mysql": {
+        "columnName": "margeHautTableau",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 12,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "margegauchetableau": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 12,
+      "scale": null,
+      "mysql": {
+        "columnName": "margeGaucheTableau",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 12,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "margedroitetableau": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 12,
+      "scale": null,
+      "mysql": {
+        "columnName": "margeDroiteTableau",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 12,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    }
+  }
+}

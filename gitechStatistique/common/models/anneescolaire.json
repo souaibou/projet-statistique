@@ -1,0 +1,119 @@
+{
+  "name": "anneescolaire",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "gitech1",
+      "table": "anneescolaires"
+    },
+    "relations": {}
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "id": 1,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "statut": {
+      "type": "String",
+      "required": true,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "statut",
+        "dataType": "enum",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "debut": {
+      "type": "Date",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "debut",
+        "dataType": "timestamp",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "fin": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "fin",
+        "dataType": "timestamp",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "ouvertpouradmission": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "ouvertPourAdmission",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "ouvertpourenregistrement": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "ouvertPourEnregistrement",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "ouvertpourinscription": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "ouvertPourInscription",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    }
+  }
+}

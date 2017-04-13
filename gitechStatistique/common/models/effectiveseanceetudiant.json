@@ -1,0 +1,85 @@
+{
+  "name": "effectiveseanceetudiant",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "gitech1",
+      "table": "effectiveseanceetudiants"
+    },
+    "relations": {
+      "effectiveseance": {
+        "model": "effectiveseance",
+        "type": "belongsTo",
+        "foreignKey": "ideffectiveseance"
+      },
+      "etudiant": {
+        "model": "etudiant",
+        "type": "belongsTo",
+        "foreignKey": "idetudiant"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "id": 1,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "ideffectiveseance": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idEffectiveSeance",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idetudiant": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idEtudiant",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "statutpresence": {
+      "type": "String",
+      "required": true,
+      "length": 7,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "statutPresence",
+        "dataType": "enum",
+        "dataLength": 7,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    }
+  }
+}

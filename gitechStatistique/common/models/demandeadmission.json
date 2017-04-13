@@ -1,0 +1,335 @@
+{
+  "name": "demandeadmission",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "gitech1",
+      "table": "demandeadmissions"
+    },
+    "relations": {
+      "photo": {
+        "model": "photo",
+        "type": "belongsTo",
+        "foreignKey": "idphoto"
+      },
+      "anneescolaire": {
+        "model": "anneescolaire",
+        "type": "belongsTo",
+        "foreignKey": "idanneescolaire"
+      },
+      "compteadmission": {
+        "model": "compteadmission",
+        "type": "belongsTo",
+        "foreignKey": "idcompteadmission"
+      },
+      "programme": {
+        "model": "programme",
+        "type": "belongsTo",
+        "foreignKey": "idprogramme"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "id": 1,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idcompteadmission": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idCompteAdmission",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "nom": {
+      "type": "String",
+      "required": true,
+      "length": 40,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "nom",
+        "dataType": "varchar",
+        "dataLength": 40,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "prenoms": {
+      "type": "String",
+      "required": true,
+      "length": 40,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "prenoms",
+        "dataType": "varchar",
+        "dataLength": 40,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "adresse": {
+      "type": "String",
+      "required": false,
+      "length": 60,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "adresse",
+        "dataType": "varchar",
+        "dataLength": 60,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "telephone": {
+      "type": "String",
+      "required": false,
+      "length": 20,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "telephone",
+        "dataType": "varchar",
+        "dataLength": 20,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "email": {
+      "type": "String",
+      "required": false,
+      "length": 40,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "email",
+        "dataType": "varchar",
+        "dataLength": 40,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "datenaissance": {
+      "type": "String",
+      "required": false,
+      "length": 20,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "dateNaissance",
+        "dataType": "varchar",
+        "dataLength": 20,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "lieunaissance": {
+      "type": "String",
+      "required": false,
+      "length": 20,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "lieuNaissance",
+        "dataType": "varchar",
+        "dataLength": 20,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "appellation": {
+      "type": "String",
+      "required": false,
+      "length": 12,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "appellation",
+        "dataType": "enum",
+        "dataLength": 12,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "idphoto": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idPhoto",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "nationalite": {
+      "type": "String",
+      "required": false,
+      "length": 38,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "nationalite",
+        "dataType": "enum",
+        "dataLength": 38,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "sexe": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "sexe",
+        "dataType": "enum",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "idanneescolaire": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idAnneeScolaire",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "idprogramme": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "mysql": {
+        "columnName": "idProgramme",
+        "dataType": "mediumint",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "niveauannee": {
+      "type": "String",
+      "required": true,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "niveauAnnee",
+        "dataType": "enum",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "datedemande": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "dateDemande",
+        "dataType": "timestamp",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "etatdemande": {
+      "type": "String",
+      "required": true,
+      "length": 13,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "etatDemande",
+        "dataType": "enum",
+        "dataLength": 13,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "datedecision": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "dateDecision",
+        "dataType": "timestamp",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "infoadditionnelles": {
+      "type": "String",
+      "required": true,
+      "length": 65535,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "infoAdditionnelles",
+        "dataType": "text",
+        "dataLength": 65535,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    }
+  }
+}

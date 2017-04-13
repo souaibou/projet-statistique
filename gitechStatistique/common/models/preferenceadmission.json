@@ -1,0 +1,284 @@
+{
+  "name": "preferenceadmission",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "gitech1",
+      "table": "preferenceadmissions"
+    },
+    "relations": {}
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "id": 1,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "accesadmission": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "accesAdmission",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "accescreationcompte": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "accesCreationCompte",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "accesnouvelledemande": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "accesNouvelleDemande",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "acceseditiondemande": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "accesEditionDemande",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "nbmaxdemandepersonne": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mysql": {
+        "columnName": "nbMaxDemandePersonne",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "choixtitre": {
+      "type": "String",
+      "required": true,
+      "length": 14,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "choixTitre",
+        "dataType": "enum",
+        "dataLength": 14,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "choixgenre": {
+      "type": "String",
+      "required": true,
+      "length": 14,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "choixGenre",
+        "dataType": "enum",
+        "dataLength": 14,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "choixdatenaissance": {
+      "type": "String",
+      "required": true,
+      "length": 14,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "choixDateNaissance",
+        "dataType": "enum",
+        "dataLength": 14,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "choixlieunaissance": {
+      "type": "String",
+      "required": true,
+      "length": 14,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "choixLieuNaissance",
+        "dataType": "enum",
+        "dataLength": 14,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "choixtelephone": {
+      "type": "String",
+      "required": true,
+      "length": 14,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "choixTelephone",
+        "dataType": "enum",
+        "dataLength": 14,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "choixadresse": {
+      "type": "String",
+      "required": true,
+      "length": 14,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "choixAdresse",
+        "dataType": "enum",
+        "dataLength": 14,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "choixnationalite": {
+      "type": "String",
+      "required": true,
+      "length": 14,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "choixNationalite",
+        "dataType": "enum",
+        "dataLength": 14,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "choixphoto": {
+      "type": "String",
+      "required": true,
+      "length": 14,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "choixPhoto",
+        "dataType": "enum",
+        "dataLength": 14,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "minniveauannee": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 3,
+      "scale": 0,
+      "mysql": {
+        "columnName": "minNiveauAnnee",
+        "dataType": "tinyint",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "maxniveauannee": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 3,
+      "scale": 0,
+      "mysql": {
+        "columnName": "maxNiveauAnnee",
+        "dataType": "tinyint",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "etatcomptepardefaut": {
+      "type": "String",
+      "required": true,
+      "length": 19,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "etatCompteParDefaut",
+        "dataType": "enum",
+        "dataLength": 19,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "envoinotificationpardefaut": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "envoiNotificationParDefaut",
+        "dataType": "enum",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    }
+  }
+}

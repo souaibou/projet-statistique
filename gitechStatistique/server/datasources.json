@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "gitech1": {
+  	"name": "gitech1",
+  	"connector": "mysql",
+    "host": "localhost",
+    "port": 8889,
+    "datasource":"gitech1",
+    "username": "souaibou",
+    "password": "passer"
+  }
+}
