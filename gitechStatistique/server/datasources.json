@@ -7,9 +7,9 @@
   	"name": "gitech1",
   	"connector": "mysql",
     "host": "localhost",
-    "port": 8889,
+    "port": "3307",
     "database":"gitech1",
-    "username": "souaibou",
-    "password": "passer"
+    "username": "root",
+    "password": ""
   }
 }
