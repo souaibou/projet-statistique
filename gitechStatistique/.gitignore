@@ -17,5 +17,7 @@
 coverage
 node_modules
 npm-debug.log
-boot
+server/datasources.json
 loopbackDiscovery.js
+/server/datasources.json
+/loopbackDiscovery.js
