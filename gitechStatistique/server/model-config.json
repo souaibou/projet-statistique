@@ -1,0 +1,398 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "anneescolaire": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "application": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "attestationdiplome": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "attestationinscription": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "attestationreussite": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "barememention": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "bareme": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "bulletinannee": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "bulletinsession": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "classeannee": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "classe": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "classesession": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "cleenregistrement": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "client": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "commentaireforum": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "compteadmission": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "compteemploi": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "cour": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "coursetudiant": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "cycle": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "dapclasse": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "dapdepartement": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "dapfiliere": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "dap": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "dapufr": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "demandeadmission": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "demandeemploi": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "demandeenregistrement": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "departement": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "effectiveseanceetudiant": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "effectiveseance": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "elementcomptable": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "emetteur": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "etudiantclasseannee": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "etudiantclassesession": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "etudiant": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "etudiantueclasseannee": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "etudiantueclassesession": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "evaluationetudiant": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "evaluation": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "fap": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "filiere": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "forum": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "groupe": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "historiqueetudiant": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "historiquepositionemetteur": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "inforecuperationmdp": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "maquette": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "matieremaquette": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "matiere": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "modelebulletin": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "noteclient": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "operationfinanciere": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "periodecomptable": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "personnel": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "personne": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "photo": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "portail": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "portailsectionelement": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "portailsection": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "poste": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "preferenceadmission": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "preferenceemploi": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "preferenceenregistrement": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "preference": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "profilcomptabilite": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "programme": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "programmeuniten": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "psedocument": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "pseevaluation": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "pselienexterne": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "pselieninterne": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "psetext": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "salle": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "seance": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "session": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "sujetforum": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "template": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "templatetableaucolonne": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "templatetableau": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "transaction": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "typeopeltcomptable": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "typeoperation": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "ueclasseannee": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "ueclassesession": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "ufr": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "uniten": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "unitensmatiere": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "upgradesequence": {
+    "public": true,
+    "dataSource": "gitech1"
+  },
+  "version": {
+    "public": true,
+    "dataSource": "gitech1"
+  }
+}
