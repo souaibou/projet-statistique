@@ -35,6 +35,7 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/materialize/bin/materialize.js',
       'bower_components/Waves/dist/waves.min.js',
+      'bower_components/highcharts/highcharts.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

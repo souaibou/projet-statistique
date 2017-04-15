@@ -7495,8 +7495,8 @@ fieldset[disabled] .form-control {
     white-space: nowrap;
     position: relative;
     border-bottom: 1px solid #e9e9e9;
-    background: url("../images/user-img-background.jpg") no-repeat no-repeat;
-    height: 135px; }
+    background: url("../images/user-img-background.jpg") no-repeat no-repeat 10%;
+    height: 160px; }
     .sidebar .user-info .image {
       margin-right: 12px;
       display: inline-block; }
@@ -7519,6 +7519,7 @@ fieldset[disabled] .form-control {
         overflow: hidden;
         font-size: 14px;
         max-width: 200px;
+        font-weight: bold;
         color: #fff; }
       .sidebar .user-info .info-container .email {
         white-space: nowrap;
@@ -7526,6 +7527,7 @@ fieldset[disabled] .form-control {
         -o-text-overflow: ellipsis;
         text-overflow: ellipsis;
         overflow: hidden;
+        font-weight: bold;
         font-size: 12px;
         max-width: 200px;
         color: #fff; }
