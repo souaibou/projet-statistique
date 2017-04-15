@@ -31,7 +31,7 @@ angular.module('jobmbayeProjectAngularApp')
 
     $http.get(API_URL + 'etudiants').then(function(data){
       $scope.nbrEtudiant  = data.data.length;
-      console.log($scope.nbrEtudiant );
+      console.log($scope.nbrEtudiant);
     }, 
     function(data){
     	console.log(data.data.length);
