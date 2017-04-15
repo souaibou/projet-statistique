@@ -1,23 +1,54 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+
+<!-- Widgets -->
+<div class="row clearfix">
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box bg-pink hover-expand-effect">
+          <div class="icon">
+              <i class="material-icons">library_books</i>
+          </div>
+          <div class="content">
+              <div class="text">DEMANDES D'EMPLOI</div>
+              <h4><p style="margin-top: -5%;margin-left: 60%;font-family: Verdana, Geneva, Tahoma, sans-serif;">{{ nbrDemandeEmplois }}</p></h4>
+              <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box bg-cyan hover-expand-effect">
+          <div class="icon">
+              <i class="material-icons">person</i>
+          </div>
+          <div class="content">
+              <div class="text">ETUDIANT</div>
+              <h4><p style="margin: 0%;margin-top: 35%;margin-left: 95%;font-family: Verdana, Geneva, Tahoma, sans-serif;size:50px;">{{ nbrEtudiant }}</p></h4>              
+              <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box bg-light-green hover-expand-effect">
+          <div class="icon">
+              <i class="material-icons">supervisor_account</i>
+          </div>
+          <div class="content">
+              <div class="text">PERSONNEL</div>
+              <h4><p style="margin: 0%;margin-top: 30%;margin-left: 87%;font-family: Verdana, Geneva, Tahoma, sans-serif;size:50px;">{{ nbrPersonnel }}</p></h4>
+              <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box bg-orange hover-expand-effect">
+          <div class="icon">
+              <i class="material-icons">work</i>
+          </div>
+          <div class="content">
+              <div class="text">COURS</div>
+              <h4><p style="margin: 0%;margin-top: 50%;margin-left: 150%;font-family: Verdana, Geneva, Tahoma, sans-serif;size:50px;">{{ nbrCour }}</p></h4>
+              <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+          </div>
+      </div>
+  </div>
 </div>
+<!-- #END# Widgets -->
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>

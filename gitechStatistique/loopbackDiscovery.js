@@ -2,10 +2,10 @@
 var loopback = require('loopback');
 var ds = loopback.createDataSource('mysql', {
   "host": "localhost",
-  "port": 3307,
+  "port": 8889,
   "database": "gitech1",
-  "username": "root",
-  "password": ""
+  "username": "souaibou",
+  "password": "passer"
 });
 
 const fs = require('fs')
