@@ -19,10 +19,10 @@ angular.module('jobmbayeProjectAngularApp')
   	$scope.matieres;
   	$scope.niveaux;
   	$scope.GrapheAafficher="Diagramme en barre";
-	$scope.listeNationalite;
-
-	$http.get('nationalities_fr.json').success(function(data){
-		$scope.listeNationalite = data;
+	$scope.listeNationalite=[];
+	$scope.niveauAnnee = [0,1,2,3,4,5,6,7,8,9,10,11,12,13];
+	$http.get('../../json/nationalities_fr.json').then(function(data){
+		$scope.listeNationalite = data.data;
 		console.log($scope.listeNationalite);
 	},function(err){
 		console.log(err);
