@@ -1,5 +1,5 @@
 <div class="block-header">
-    <h2>MAIN > emplois</h2>
+    <h2>MAIN > etudiant</h2>
 </div>
 <div class="panel panel-primary">
   <div class="panel-heading" role="tab" id="headingTwo_1">
@@ -46,7 +46,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c1" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Comptes
+                              Sexe
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c1" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -55,16 +55,13 @@
                         <div id="c1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les comptes</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Homme</label></div> 
                             </div>
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Compte actif</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Femme</label></div> 
                             </div>
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Compte inactif</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Compte bloqué"</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Autre</label></div> 
                             </div>
                           </div>
                         </div>
@@ -74,7 +71,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c2" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Genre
+                              Résultat
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c2" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -83,13 +80,13 @@
                         <div id="c2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les genres</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>NON_DEFINI</label></div> 
                             </div>
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Masculin</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>REUSSITE</label></div> 
                             </div>
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Féminin</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>ECHEC</label></div> 
                             </div>
                           </div>
                         </div>
@@ -99,7 +96,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c3" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Dossiers
+                              Nationalité
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c3" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -108,22 +105,11 @@
                         <div id="c3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les dossiers</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Dossiers non ouverts</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Dossiers ouverts"</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Dossiers imcomplets</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Dossiers complets"</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Dossiers transmis</label></div> 
+                              <div class="col-md-12">
+                                <select class="form-control">
+                                  <option value="" ng-repeat="nationalite in listeNationalite">{{ nationalite.nationality }}</option>
+                                </select>
+                              </div> 
                             </div>
                           </div>
                         </div>
@@ -136,7 +122,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c4" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Demandes
+                              Statut
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c4" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -145,22 +131,28 @@
                         <div id="c4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les demandes</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>ADMIS</label></div> 
                             </div>
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Demandes transmises</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>INSCRIT</label></div> 
                             </div>
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Demandes en traitement"</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>REDOUBLANT</label></div> 
                             </div>
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Demandes approuvées</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>REINSCRIT</label></div> 
                             </div>
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Demandes refusées"</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>SUSPENDU</label></div> 
                             </div>
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Demandes annulées</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>EXCLU</label></div> 
+                            </div>
+                            <div class="row">
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>FINISSANT</label></div> 
+                            </div>
+                            <div class="row">
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>AUTRE</label></div> 
                             </div>
                           </div>
                         </div>
@@ -170,7 +162,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c5" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              UFRs
+                              Niveau Année
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c5" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -178,11 +170,8 @@
                         </div>
                         <div id="c5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les UFRs</label></div> 
-                            </div>
-                            <div ng-repeat="ufr in ufrs" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{ufr.nom}}</label></div> 
+                            <div class="row" ng-repeat="i in [0,1,2,3,4,5,6,7,8,9,10,11,12,13]">
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{ i }}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -192,7 +181,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c6" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Departements
+                              Mention
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c6" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -201,217 +190,7 @@
                         <div id="c6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les departements</label></div> 
-                            </div>
-                            <div ng-repeat="departement in departements" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{departement.nom}}</label></div> 
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  <!-- Troisieme ligne -->
-                    <div class="row">
-                      <div class="panel  borderBottom col-md-4">
-                        <div class="panel-heading" role="tab" id="col_1">
-                          <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c7" aria-expanded="false"
-                               aria-controls="collapseTwo_1">
-                              Filieres
-                            </a>
-                            <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c7" aria-expanded="false"
-                               aria-controls="collapseTwo_1"></i>
-                          </h4>
-                        </div>
-                        <div id="c7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
-                          <div class="panel-body">
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Toutes les filieres</label></div> 
-                            </div>
-                            <div ng-repeat="filiere in filieres" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{filiere.nom}}</label></div> 
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="panel borderBottom col-md-4">
-                        <div class="panel-heading" role="tab" id="col_2">
-                          <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c8" aria-expanded="false"
-                               aria-controls="collapseTwo_1">
-                              Unités d'enseignement
-                            </a>
-                            <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c8" aria-expanded="false"
-                               aria-controls="collapseTwo_1"></i>
-                          </h4>
-                        </div>
-                        <div id="c8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
-                          <div class="panel-body">
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Toutes les unités d'enseignements</label></div> 
-                            </div>
-                            <div ng-repeat="uniten in unitens" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{uniten.nom}}</label></div> 
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="panel borderBottom col-md-4">
-                        <div class="panel-heading" role="tab" id="col_3">
-                          <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c9" aria-expanded="false"
-                               aria-controls="collapseTwo_1">
-                              Programmes
-                            </a>
-                            <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c9" aria-expanded="false"
-                               aria-controls="collapseTwo_1"></i>
-                          </h4>
-                        </div>
-                        <div id="c9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
-                          <div class="panel-body">
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les programmes</label></div> 
-                            </div>
-                            <div ng-repeat="programme in programmes" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{programme.nom}}</label></div> 
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  <!-- Quatrieme ligne -->
-                    <div class="row">
-                      <div class="panel  borderBottom col-md-4">
-                        <div class="panel-heading" role="tab" id="col_1">
-                          <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c10" aria-expanded="false"
-                               aria-controls="collapseTwo_1">
-                              Matieres
-                            </a>
-                            <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c10" aria-expanded="false"
-                               aria-controls="collapseTwo_1"></i>
-                          </h4>
-                        </div>
-                        <div id="c10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
-                          <div class="panel-body">
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les matiéres</label></div> 
-                            </div>
-                            <div ng-repeat="matiere in matieres" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{matiere.nom}}</label></div> 
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="panel borderBottom col-md-4">
-                        <div class="panel-heading" role="tab" id="col_2">
-                          <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c11" aria-expanded="false"
-                               aria-controls="collapseTwo_1">
-                              Niveaux d'etude
-                            </a>
-                            <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c11" aria-expanded="false"
-                               aria-controls="collapseTwo_1"></i>
-                          </h4>
-                        </div>
-                        <div id="c11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
-                          <div class="panel-body">
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les niveaux</label></div> 
-                            </div>
-                            <div ng-repeat="niveau in niveaux" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{niveau.nom}}</label></div> 
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="panel borderBottom col-md-4">
-                        <div class="panel-heading" role="tab" id="col_3">
-                          <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c12" aria-expanded="false"
-                               aria-controls="collapseTwo_1">
-                              Disciplines
-                            </a>
-                            <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c12" aria-expanded="false"
-                               aria-controls="collapseTwo_1"></i>
-                          </h4>
-                        </div>
-                        <div id="c12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
-                          <div class="panel-body">
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les disciplines</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{programme.nom}}</label></div> 
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  <!-- Cinquieme ligne -->
-                    <div class="row">
-                      <div class="panel  borderBottom col-md-4">
-                        <div class="panel-heading" role="tab" id="col_1">
-                          <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c13" aria-expanded="false"
-                               aria-controls="collapseTwo_1">
-                              Specialités
-                            </a>
-                            <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c13" aria-expanded="false"
-                               aria-controls="collapseTwo_1"></i>
-                          </h4>
-                        </div>
-                        <div id="c13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
-                          <div class="panel-body">
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les spécialités</label></div> 
-                            </div>
-                            <div ng-repeat="matiere in matieres" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{matiere.nom}}</label></div> 
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="panel borderBottom col-md-4">
-                        <div class="panel-heading" role="tab" id="col_2">
-                          <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c14" aria-expanded="false"
-                               aria-controls="collapseTwo_1">
-                              Pays de naissance
-                            </a>
-                            <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c14" aria-expanded="false"
-                               aria-controls="collapseTwo_1"></i>
-                          </h4>
-                        </div>
-                        <div id="c14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
-                          <div class="panel-body">
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les pays</label></div> 
-                            </div>
-                            <div ng-repeat="country in pays" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{country.nom}}</label></div> 
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="panel borderBottom col-md-4">
-                        <div class="panel-heading" role="tab" id="col_3">
-                          <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c15" aria-expanded="false"
-                               aria-controls="collapseTwo_1">
-                              Residences
-                            </a>
-                            <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c15" aria-expanded="false"
-                               aria-controls="collapseTwo_1"></i>
-                          </h4>
-                        </div>
-                        <div id="c15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
-                          <div class="panel-body">
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les pays</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{programme.nom}}</label></div> 
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>.........</label></div> 
                             </div>
                           </div>
                         </div>

@@ -31,6 +31,11 @@ var app=angular
         controller: 'EmploiCtrl',
         controllerAs: 'emploi'
       })
+      .when('/etudiant', {
+        templateUrl: 'views/etudiant.html',
+        controller: 'EtudiantCtrl',
+        controllerAs: 'etudiant'
+      })
       .otherwise({
         redirectTo: '/'
       });
