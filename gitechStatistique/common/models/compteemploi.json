@@ -6,7 +6,13 @@
       "schema": "gitech1",
       "table": "compteemplois"
     },
-    "relations": {}
+    "relations": {
+      "photo": {
+        "model": "photo",
+        "type": "belongsTo",
+        "foreignKey": "idphoto"
+      }
+    }
   },
   "properties": {
     "id": {
@@ -310,21 +316,6 @@
         "nullable": "Y"
       }
     },
-    "nationalite": {
-      "type": "String",
-      "required": false,
-      "length": 38,
-      "precision": null,
-      "scale": null,
-      "mysql": {
-        "columnName": "nationalite",
-        "dataType": "enum",
-        "dataLength": 38,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
-      }
-    },
     "sexe": {
       "type": "String",
       "required": false,
@@ -353,6 +344,21 @@
         "dataPrecision": null,
         "dataScale": null,
         "nullable": "N"
+      }
+    },
+    "nationalite": {
+      "type": "String",
+      "required": false,
+      "length": 38,
+      "precision": null,
+      "scale": null,
+      "mysql": {
+        "columnName": "nationalite",
+        "dataType": "enum",
+        "dataLength": 38,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
       }
     }
   }

@@ -52,16 +52,10 @@
                         <div id="c1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les comptes</label></div> 
+                               <div class="switch"><label><input ng-model="stat.compte" type="checkbox" checked><span class="lever"></span>Tous les comptes</label></div> 
                             </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Compte actif</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Compte inactif</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Compte bloqué"</label></div> 
+                            <div ng-repeat="compte in comptes" ng-show="!stat.compte" class="row">
+                               <div class="switch"><label><input ng-model="stat.comptes[compte]" type="checkbox" checked><span class="lever"></span>{{compte}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -71,7 +65,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c2" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Genre
+                              Genres
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c2" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -80,13 +74,10 @@
                         <div id="c2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les genres</label></div> 
+                               <div class="switch"><label><input ng-model="stat.genre" type="checkbox" checked><span class="lever"></span>Tous les genres</label></div> 
                             </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Masculin</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Féminin</label></div> 
+                            <div ng-repeat="genre in genres" ng-show="!stat.genre" class="row">
+                               <div class="switch"><label><input ng-model="stat.genres[genre]" type="checkbox" checked><span class="lever"></span>{{genre}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -105,22 +96,10 @@
                         <div id="c3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les dossiers</label></div> 
+                               <div class="switch"><label><input ng-model="stat.dossier" type="checkbox" checked><span class="lever"></span>Tous les dossiers</label></div> 
                             </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Dossiers non ouverts</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Dossiers ouverts"</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Dossiers imcomplets</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Dossiers complets"</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Dossiers transmis</label></div> 
+                            <div ng-repeat="dossier in dossiers" ng-show="!stat.dossier" class="row">
+                               <div class="switch"><label><input ng-model="stat.dossiers[dossier]" type="checkbox" checked><span class="lever"></span>{{dossier}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -142,22 +121,10 @@
                         <div id="c4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les demandes</label></div> 
+                               <div class="switch"><label><input ng-model="stat.demande" type="checkbox" checked><span class="lever"></span>Tous les demandes</label></div> 
                             </div>
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Demandes transmises</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Demandes en traitement"</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Demandes approuvées</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Demandes refusées"</label></div> 
-                            </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Demandes annulées</label></div> 
+                               <div ng-repeat="demande in demandes" ng-show="!stat.demande" class="switch"><label><input ng-model="stat.demandes[demande]" type="checkbox" checked><span class="lever"></span>{{demande}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -176,10 +143,10 @@
                         <div id="c5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les UFRs</label></div> 
+                               <div class="switch"><label><input ng-model="stat.ufr" type="checkbox" checked><span class="lever"></span>Tous les UFRs</label></div> 
                             </div>
-                            <div ng-repeat="ufr in ufrs" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{ufr.nom}}</label></div> 
+                            <div ng-show="!stat.ufr" ng-repeat="ufr in ufrs" class="row">
+                               <div class="switch"><label><input ng-model="stat.ufrs[ufr.nom]" type="checkbox" checked><span class="lever"></span>{{ufr.nom}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -198,10 +165,10 @@
                         <div id="c6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les departements</label></div> 
+                               <div class="switch"><label><input ng-model="stat.departement" type="checkbox" checked><span class="lever"></span>Tous les departements</label></div> 
                             </div>
-                            <div ng-repeat="departement in departements" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{departement.nom}}</label></div> 
+                            <div ng-show="!stat.departement" ng-repeat="departement in departements" class="row">
+                               <div class="switch"><label><input ng-model="stat.departements[departement.nom]" type="checkbox" checked><span class="lever"></span>{{departement.nom}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -223,10 +190,10 @@
                         <div id="c7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Toutes les filieres</label></div> 
+                               <div class="switch"><label><input ng-model="stat.filiere" type="checkbox" checked><span class="lever"></span>Toutes les filieres</label></div> 
                             </div>
-                            <div ng-repeat="filiere in filieres" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{filiere.nom}}</label></div> 
+                            <div ng-show="!stat.filiere" ng-repeat="filiere in filieres" class="row">
+                               <div class="switch"><label><input ng-model="stat.filieres[filiere.nom]" type="checkbox" checked><span class="lever"></span>{{filiere.nom}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -245,10 +212,10 @@
                         <div id="c8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Toutes les unités d'enseignements</label></div> 
+                               <div class="switch"><label><input ng-model="stat.unitens" type="checkbox" checked><span class="lever"></span>Toutes les unités d'enseignements</label></div> 
                             </div>
-                            <div ng-repeat="uniten in unitens" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{uniten.nom}}</label></div> 
+                            <div ng-show="!stat.uniten" ng-repeat="uniten in unitens" class="row">
+                               <div class="switch"><label><input ng-model="stat.unitens[uniten.nom]" type="checkbox" checked><span class="lever"></span>{{uniten.nom}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -267,10 +234,10 @@
                         <div id="c9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les programmes</label></div> 
+                               <div class="switch"><label><input ng-model="stat.programme" type="checkbox" checked><span class="lever"></span>Tous les programmes</label></div> 
                             </div>
-                            <div ng-repeat="programme in programmes" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{programme.nom}}</label></div> 
+                            <div ng-show="!stat.programme" ng-repeat="programme in programmes" class="row">
+                               <div class="switch"><label><input ng-model="stat.programmes[programme.nom]" type="checkbox" checked><span class="lever"></span>{{programme.nom}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -292,10 +259,10 @@
                         <div id="c10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les matiéres</label></div> 
+                               <div class="switch"><label><input ng-model="stat.matiere" type="checkbox" checked><span class="lever"></span>Tous les matiéres</label></div> 
                             </div>
-                            <div ng-repeat="matiere in matieres" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{matiere.nom}}</label></div> 
+                            <div ng-show="!stat.matiere" ng-repeat="matiere in matieres" class="row">
+                               <div class="switch"><label><input ng-model="stat.matieres[matiere.nom]" type="checkbox" checked><span class="lever"></span>{{matiere.nom}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -314,10 +281,10 @@
                         <div id="c11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les niveaux</label></div> 
+                               <div class="switch"><label><input  ng-model="stat.niveau" type="checkbox" checked><span class="lever"></span><strong>Tous les niveaux</strong></label></div> 
                             </div>
-                            <div ng-repeat="niveau in niveaux" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{niveau.nom}}</label></div> 
+                            <div ng-show="!stat.niveau" ng-repeat="niveau in niveauEtudes" class="row">
+                               <div class="switch"><label><input ng-model="stat.niveaux[niveau]" type="checkbox" checked><span class="lever"></span><strong>{{niveau}}</strong></label></div> 
                             </div>
                           </div>
                         </div>
@@ -336,10 +303,10 @@
                         <div id="c12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les disciplines</label></div> 
+                               <div class="switch"><label><input ng-model="stat.discipline" type="checkbox" checked><span class="lever"></span><strong>Tous les disciplines</strong></label></div> 
                             </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{programme.nom}}</label></div> 
+                            <div ng-show="!stat.discipline" class="row">
+                               <div ng-repeat="discipline in disciplines" class="switch"><label><input ng-model="stat.disciplines[discipline]" type="checkbox" checked><span class="lever"></span><strong>{{discipline}}</strong></label></div> 
                             </div>
                           </div>
                         </div>
@@ -361,10 +328,10 @@
                         <div id="c13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les spécialités</label></div> 
+                               <div class="switch"><label><input ng-model="stat.specialite" type="checkbox" checked><span class="lever"></span>Tous les spécialités</label></div> 
                             </div>
-                            <div ng-repeat="matiere in matieres" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{matiere.nom}}</label></div> 
+                            <div ng-show="!stat.specialite" ng-repeat="specialite in specialites" class="row">
+                               <div class="switch"><label><input ng-model="stat.specialites[specialite]" type="checkbox" checked><span class="lever"></span>{{specialite}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -374,7 +341,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c14" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Pays de naissance
+                              Nationalités
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c14" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -383,10 +350,10 @@
                         <div id="c14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les pays</label></div> 
+                               <div class="switch"><label><input ng-model="stat.nationalite" type="checkbox" checked><span class="lever"></span><strong>Toutes les nationalités</strong></label></div> 
                             </div>
-                            <div ng-repeat="country in pays" class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{country.nom}}</label></div> 
+                            <div ng-show="!stat.nationalite" ng-repeat="country in nationalites" class="row">
+                               <div class="switch"><label><input ng-model="stat.nationalites[country]" type="checkbox" checked><span class="lever"></span><strong>{{country}}</strong></label></div> 
                             </div>
                           </div>
                         </div>
@@ -398,17 +365,17 @@
                                aria-controls="collapseTwo_1">
                               Residences
                             </a>
-                            <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c15" aria-expanded="false"
+                            <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c15" residencearia-expanded="false"
                                aria-controls="collapseTwo_1"></i>
                           </h4>
                         </div>
                         <div id="c15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tous les pays</label></div> 
+                               <div class="switch"><label><input ng-model="stat.residence" type="checkbox" checked><span class="lever"></span>Toutes les residences</label></div> 
                             </div>
-                            <div class="row">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{programme.nom}}</label></div> 
+                            <div ng-show="!stat.residence" class="row">
+                               <div ng-repeat="residence in residences" class="switch"><label><input ng-model="stat.residences[residence.nom]" type="checkbox" checked><span class="lever"></span><strong>{{residence.name}}</strong></label></div> 
                             </div>
                           </div>
                         </div>
@@ -419,22 +386,173 @@
                     <div class="row">
                       <div class="col-md-3">
                         <div class="row">
-                           <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Element4</label></div> 
+                           <div class="switch"><label><input ng-model="critere.nom" type="checkbox" checked><span class="lever"></span>Nom</label></div> 
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="row">
-                           <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Element4</label></div> 
+                           <div class="switch"><label><input ng-model="critere.prenom" type="checkbox" checked><span class="lever"></span>Prenom</label></div> 
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="row">
-                           <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Element4</label></div> 
+                           <div class="switch"><label><input ng-model="critere.Adresse" type="checkbox" checked><span class="lever"></span>Adresse</label></div> 
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="row">
-                           <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Element4</label></div> 
+                           <div class="switch"><label><input ng-model="critere.indicatif" type="checkbox" checked><span class="lever"></span>Indicatif</label></div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.telephone" type="checkbox" checked><span class="lever"></span>Téléphone</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.telephonesecondaire" type="checkbox" checked><span class="lever"></span>Téléphone secondaire</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.email" type="checkbox" checked><span class="lever"></span>Email</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.emailsecondaire" type="checkbox" checked><span class="lever"></span>Email secondaire</label></div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.datedenaissance" type="checkbox" checked><span class="lever"></span>Date de naissance</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.lieudenaissance" type="checkbox" checked><span class="lever"></span>Lieu de naissance</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.compte" type="checkbox" checked><span class="lever"></span>Etat compte</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.niveau" type="checkbox" checked><span class="lever"></span>Niveau Etude</label></div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.discipline" type="checkbox" checked><span class="lever"></span>Discipline</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.specialite" type="checkbox" checked><span class="lever"></span>Spécialité</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.etape" type="checkbox" checked><span class="lever"></span>Etape</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.appellation" type="checkbox" checked><span class="lever"></span>Appellation</label></div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.type" type="checkbox" checked><span class="lever"></span>Type</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.identifiantphoto" type="checkbox" checked><span class="lever"></span>Identifiant photo</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.nationalite" type="checkbox" checked><span class="lever"></span>Nationalité</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.genre" type="checkbox" checked><span class="lever"></span>Genre</label></div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.dossiers" type="checkbox" checked><span class="lever"></span>Etat dossiers</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.demande" type="checkbox" checked><span class="lever"></span>Etat Demande</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.ufr" type="checkbox" checked><span class="lever"></span>Ufr</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.departement" type="checkbox" checked><span class="lever"></span>Département</label></div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.filiere" type="checkbox" checked><span class="lever"></span>Filiere</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.uniten" type="checkbox" checked><span class="lever"></span>Unité d'enseignement</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.programme" type="checkbox" checked><span class="lever"></span>Programme</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.matiere" type="checkbox" checked><span class="lever"></span>Matiére</label></div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.paysdenassance" type="checkbox" checked><span class="lever"></span>Pays de naissance</label></div> 
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                           <div class="switch"><label><input ng-model="critere.residence" type="checkbox" checked><span class="lever"></span>Residence</label></div> 
                         </div>
                       </div>
                     </div>
@@ -453,7 +571,7 @@
 
 <!-- Started Graphe -->
 <div class="row" ng-show="affichageGraphe">
-  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+  <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
     <div class="card">
         <div class="header">
             <h2>
@@ -461,12 +579,25 @@
             </h2>
         </div>
         <div class="body">
-          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="option" name="group1" type="radio" id="test2" aria-invalid="false" style=""> <label class="augText" for="test2">Option</label> </p>
-          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="formation" name="group1" type="radio" id="test3" aria-invalid="false" style=""> <label class="augText" for="test3">Formation</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="comptes" name="group1" type="radio" id="test1" aria-invalid="false" style=""> <label class="augText" for="test1">Comptes</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="genres" name="group1" type="radio" id="test2" aria-invalid="false" style=""> <label class="augText" for="test2">Genres</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="dossiers" name="group1" type="radio" id="test3" aria-invalid="false" style=""> <label class="augText" for="test3">Dossiers</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="demandes" name="group1" type="radio" id="test4" aria-invalid="false" style=""> <label class="augText" for="test4">Demandes</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="ufrs" name="group1" type="radio" id="test5" aria-invalid="false" style=""> <label class="augText" for="test5">Ufrs</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="departements" name="group1" type="radio" id="test6" aria-invalid="false" style=""> <label class="augText" for="test6">Departements</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="filieres" name="group1" type="radio" id="test7" aria-invalid="false" style=""> <label class="augText" for="test7">Filieres</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="unitens" name="group1" type="radio" id="test8" aria-invalid="false" style=""> <label class="augText" for="test8">Unités d'enseignement</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="programmes" name="group1" type="radio" id="test9" aria-invalid="false" style=""> <label class="augText" for="test9">Programmes</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="matieres" name="group1" type="radio" id="test10" aria-invalid="false" style=""> <label class="augText" for="test10">Matiéres</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="niveauEtudes" name="group1" type="radio" id="test11" aria-invalid="false" style=""> <label class="augText" for="test11">Niveaux études</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="disciplines" name="group1" type="radio" id="test12" aria-invalid="false" style=""> <label class="augText" for="test12">Disciplines</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="spécialites" name="group1" type="radio" id="test13" aria-invalid="false" style=""> <label class="augText" for="test13">Spécialités</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="paysNaissance" name="group1" type="radio" id="test14" aria-invalid="false" style=""> <label class="augText" for="test14">Pays de naissance</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="residences" name="group1" type="radio" id="test15" aria-invalid="false" style=""> <label class="augText" for="test15">Résidencese</label> </p>
         </div>
     </div>
   </div>
-  <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+  <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
     <div class="card">
         <div class="header">
           <div class="row">
@@ -517,484 +648,107 @@
           </div>
         </div>
       </div>
-      <div class="body">
+      <div class="body" style="overflow: scroll;">
         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
           <thead>
           <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
+            <th ng-show="critere.nom">Nom</th>
+            <th ng-show="critere.prenom">Prenom</th>
+            <th ng-show="critere.adresse">Adresse</th>
+            <th ng-show="critere.genre">Genre</th>
+            <th ng-show="critere.indicatif">Indicatif</th>
+            <th ng-show="critere.telephone">Téléphone</th>
+            <th ng-show="critere.telephonesecondaire">Téléphone secondaire</th>
+            <th ng-show="critere.email">Email</th>
+            <th ng-show="critere.emailsecondaire">Email secondaire</th>
+            <th ng-show="critere.datedenaissance">Date de naissance</th>
+            <th ng-show="critere.lieudenaissance">Lieu de naissance</th>
+            <th ng-show="critere.compte">Etat Compte</th>
+            <th ng-show="critere.demande">Etat demande</th>
+            <th ng-show="critere.dossier">Etat dossier</th>
+            <th ng-show="critere.niveau">Niveau Etude</th>
+            <th ng-show="critere.discipline">Discipline</th>
+            <th ng-show="critere.specialite">Specialité</th>
+            <th ng-show="critere.etape">Etape</th>
+            <th ng-show="critere.appellation">Appellation</th>
+            <th ng-show="critere.type">Type</th>
+            <th ng-show="critere.identifiantphoto">Identifiant photo</th>
+            <th ng-show="critere.nationalite">Nationalité</th>
+            <th ng-show="critere.ufr">Ufr</th>
+            <th ng-show="critere.departement">Departement</th>
+            <th ng-show="critere.filiere">Filiere</th>
+            <th ng-show="critere.uniten">Unité d'enseignement</th>
+            <th ng-show="critere.programme">Programme</th>
+            <th ng-show="critere.matiere">Matiere</th>
+            <th ng-show="critere.paysdenassance">Pays de naissance</th>
+            <th ng-show="critere.residence">Residence</th>
           </tr>
           </thead>
           <tfoot>
           <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
+            <th ng-show="critere.nom">Nom</th>
+            <th ng-show="critere.prenom">Prenom</th>
+            <th ng-show="critere.adresse">Adresse</th>
+            <th ng-show="critere.genre">Genre</th>
+            <th ng-show="critere.indicatif">Indicatif</th>
+            <th ng-show="critere.telephone">Téléphone</th>
+            <th ng-show="critere.telephonesecondaire">Téléphone secondaire</th>
+            <th ng-show="critere.email">Email</th>
+            <th ng-show="critere.emailsecondaire">Email secondaire</th>
+            <th ng-show="critere.datedenaissance">Date de naissance</th>
+            <th ng-show="critere.lieudenaissance">Lieu de naissance</th>
+            <th ng-show="critere.compte">Etat Compte</th>
+            <th ng-show="critere.demande">Etat demande</th>
+            <th ng-show="critere.dossier">Etat dossier</th>
+            <th ng-show="critere.niveau">Niveau Etude</th>
+            <th ng-show="critere.discipline">Discipline</th>
+            <th ng-show="critere.specialite">Specialité</th>
+            <th ng-show="critere.etape">Etape</th>
+            <th ng-show="critere.appellation">Appellation</th>
+            <th ng-show="critere.type">Type</th>
+            <th ng-show="critere.identifiantphoto">Identifiant photo</th>
+            <th ng-show="critere.nationalite">Nationalité</th>
+            <th ng-show="critere.ufr">Ufr</th>
+            <th ng-show="critere.departement">Departement</th>
+            <th ng-show="critere.filiere">Filiere</th>
+            <th ng-show="critere.uniten">Unité d'enseignement</th>
+            <th ng-show="critere.programme">Programme</th>
+            <th ng-show="critere.matiere">Matiere</th>
+            <th ng-show="critere.paysdenassance">Pays de naissance</th>
+            <th ng-show="critere.residence">Residence</th>
           </tr>
           </tfoot>
           <tbody>
-          <tr>
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td>$320,800</td>
-          </tr>
-          <tr>
-            <td>Garrett Winters</td>
-            <td>Accountant</td>
-            <td>Tokyo</td>
-            <td>63</td>
-            <td>2011/07/25</td>
-            <td>$170,750</td>
-          </tr>
-          <tr>
-            <td>Ashton Cox</td>
-            <td>Junior Technical Author</td>
-            <td>San Francisco</td>
-            <td>66</td>
-            <td>2009/01/12</td>
-            <td>$86,000</td>
-          </tr>
-          <tr>
-            <td>Cedric Kelly</td>
-            <td>Senior Javascript Developer</td>
-            <td>Edinburgh</td>
-            <td>22</td>
-            <td>2012/03/29</td>
-            <td>$433,060</td>
-          </tr>
-          <tr>
-            <td>Airi Satou</td>
-            <td>Accountant</td>
-            <td>Tokyo</td>
-            <td>33</td>
-            <td>2008/11/28</td>
-            <td>$162,700</td>
-          </tr>
-          <tr>
-            <td>Brielle Williamson</td>
-            <td>Integration Specialist</td>
-            <td>New York</td>
-            <td>61</td>
-            <td>2012/12/02</td>
-            <td>$372,000</td>
-          </tr>
-          <tr>
-            <td>Herrod Chandler</td>
-            <td>Sales Assistant</td>
-            <td>San Francisco</td>
-            <td>59</td>
-            <td>2012/08/06</td>
-            <td>$137,500</td>
-          </tr>
-          <tr>
-            <td>Rhona Davidson</td>
-            <td>Integration Specialist</td>
-            <td>Tokyo</td>
-            <td>55</td>
-            <td>2010/10/14</td>
-            <td>$327,900</td>
-          </tr>
-          <tr>
-            <td>Colleen Hurst</td>
-            <td>Javascript Developer</td>
-            <td>San Francisco</td>
-            <td>39</td>
-            <td>2009/09/15</td>
-            <td>$205,500</td>
-          </tr>
-          <tr>
-            <td>Sonya Frost</td>
-            <td>Software Engineer</td>
-            <td>Edinburgh</td>
-            <td>23</td>
-            <td>2008/12/13</td>
-            <td>$103,600</td>
-          </tr>
-          <tr>
-            <td>Jena Gaines</td>
-            <td>Office Manager</td>
-            <td>London</td>
-            <td>30</td>
-            <td>2008/12/19</td>
-            <td>$90,560</td>
-          </tr>
-          <tr>
-            <td>Quinn Flynn</td>
-            <td>Support Lead</td>
-            <td>Edinburgh</td>
-            <td>22</td>
-            <td>2013/03/03</td>
-            <td>$342,000</td>
-          </tr>
-          <tr>
-            <td>Charde Marshall</td>
-            <td>Regional Director</td>
-            <td>San Francisco</td>
-            <td>36</td>
-            <td>2008/10/16</td>
-            <td>$470,600</td>
-          </tr>
-          <tr>
-            <td>Haley Kennedy</td>
-            <td>Senior Marketing Designer</td>
-            <td>London</td>
-            <td>43</td>
-            <td>2012/12/18</td>
-            <td>$313,500</td>
-          </tr>
-          <tr>
-            <td>Tatyana Fitzpatrick</td>
-            <td>Regional Director</td>
-            <td>London</td>
-            <td>19</td>
-            <td>2010/03/17</td>
-            <td>$385,750</td>
-          </tr>
-          <tr>
-            <td>Michael Silva</td>
-            <td>Marketing Designer</td>
-            <td>London</td>
-            <td>66</td>
-            <td>2012/11/27</td>
-            <td>$198,500</td>
-          </tr>
-          <tr>
-            <td>Paul Byrd</td>
-            <td>Chief Financial Officer (CFO)</td>
-            <td>New York</td>
-            <td>64</td>
-            <td>2010/06/09</td>
-            <td>$725,000</td>
-          </tr>
-          <tr>
-            <td>Gloria Little</td>
-            <td>Systems Administrator</td>
-            <td>New York</td>
-            <td>59</td>
-            <td>2009/04/10</td>
-            <td>$237,500</td>
-          </tr>
-          <tr>
-            <td>Bradley Greer</td>
-            <td>Software Engineer</td>
-            <td>London</td>
-            <td>41</td>
-            <td>2012/10/13</td>
-            <td>$132,000</td>
-          </tr>
-          <tr>
-            <td>Dai Rios</td>
-            <td>Personnel Lead</td>
-            <td>Edinburgh</td>
-            <td>35</td>
-            <td>2012/09/26</td>
-            <td>$217,500</td>
-          </tr>
-          <tr>
-            <td>Jenette Caldwell</td>
-            <td>Development Lead</td>
-            <td>New York</td>
-            <td>30</td>
-            <td>2011/09/03</td>
-            <td>$345,000</td>
-          </tr>
-          <tr>
-            <td>Yuri Berry</td>
-            <td>Chief Marketing Officer (CMO)</td>
-            <td>New York</td>
-            <td>40</td>
-            <td>2009/06/25</td>
-            <td>$675,000</td>
-          </tr>
-          <tr>
-            <td>Caesar Vance</td>
-            <td>Pre-Sales Support</td>
-            <td>New York</td>
-            <td>21</td>
-            <td>2011/12/12</td>
-            <td>$106,450</td>
-          </tr>
-          <tr>
-            <td>Doris Wilder</td>
-            <td>Sales Assistant</td>
-            <td>Sidney</td>
-            <td>23</td>
-            <td>2010/09/20</td>
-            <td>$85,600</td>
-          </tr>
-          <tr>
-            <td>Angelica Ramos</td>
-            <td>Chief Executive Officer (CEO)</td>
-            <td>London</td>
-            <td>47</td>
-            <td>2009/10/09</td>
-            <td>$1,200,000</td>
-          </tr>
-          <tr>
-            <td>Gavin Joyce</td>
-            <td>Developer</td>
-            <td>Edinburgh</td>
-            <td>42</td>
-            <td>2010/12/22</td>
-            <td>$92,575</td>
-          </tr>
-          <tr>
-            <td>Jennifer Chang</td>
-            <td>Regional Director</td>
-            <td>Singapore</td>
-            <td>28</td>
-            <td>2010/11/14</td>
-            <td>$357,650</td>
-          </tr>
-          <tr>
-            <td>Brenden Wagner</td>
-            <td>Software Engineer</td>
-            <td>San Francisco</td>
-            <td>28</td>
-            <td>2011/06/07</td>
-            <td>$206,850</td>
-          </tr>
-          <tr>
-            <td>Fiona Green</td>
-            <td>Chief Operating Officer (COO)</td>
-            <td>San Francisco</td>
-            <td>48</td>
-            <td>2010/03/11</td>
-            <td>$850,000</td>
-          </tr>
-          <tr>
-            <td>Shou Itou</td>
-            <td>Regional Marketing</td>
-            <td>Tokyo</td>
-            <td>20</td>
-            <td>2011/08/14</td>
-            <td>$163,000</td>
-          </tr>
-          <tr>
-            <td>Michelle House</td>
-            <td>Integration Specialist</td>
-            <td>Sidney</td>
-            <td>37</td>
-            <td>2011/06/02</td>
-            <td>$95,400</td>
-          </tr>
-          <tr>
-            <td>Suki Burks</td>
-            <td>Developer</td>
-            <td>London</td>
-            <td>53</td>
-            <td>2009/10/22</td>
-            <td>$114,500</td>
-          </tr>
-          <tr>
-            <td>Prescott Bartlett</td>
-            <td>Technical Author</td>
-            <td>London</td>
-            <td>27</td>
-            <td>2011/05/07</td>
-            <td>$145,000</td>
-          </tr>
-          <tr>
-            <td>Gavin Cortez</td>
-            <td>Team Leader</td>
-            <td>San Francisco</td>
-            <td>22</td>
-            <td>2008/10/26</td>
-            <td>$235,500</td>
-          </tr>
-          <tr>
-            <td>Martena Mccray</td>
-            <td>Post-Sales support</td>
-            <td>Edinburgh</td>
-            <td>46</td>
-            <td>2011/03/09</td>
-            <td>$324,050</td>
-          </tr>
-          <tr>
-            <td>Unity Butler</td>
-            <td>Marketing Designer</td>
-            <td>San Francisco</td>
-            <td>47</td>
-            <td>2009/12/09</td>
-            <td>$85,675</td>
-          </tr>
-          <tr>
-            <td>Howard Hatfield</td>
-            <td>Office Manager</td>
-            <td>San Francisco</td>
-            <td>51</td>
-            <td>2008/12/16</td>
-            <td>$164,500</td>
-          </tr>
-          <tr>
-            <td>Hope Fuentes</td>
-            <td>Secretary</td>
-            <td>San Francisco</td>
-            <td>41</td>
-            <td>2010/02/12</td>
-            <td>$109,850</td>
-          </tr>
-          <tr>
-            <td>Vivian Harrell</td>
-            <td>Financial Controller</td>
-            <td>San Francisco</td>
-            <td>62</td>
-            <td>2009/02/14</td>
-            <td>$452,500</td>
-          </tr>
-          <tr>
-            <td>Timothy Mooney</td>
-            <td>Office Manager</td>
-            <td>London</td>
-            <td>37</td>
-            <td>2008/12/11</td>
-            <td>$136,200</td>
-          </tr>
-          <tr>
-            <td>Jackson Bradshaw</td>
-            <td>Director</td>
-            <td>New York</td>
-            <td>65</td>
-            <td>2008/09/26</td>
-            <td>$645,750</td>
-          </tr>
-          <tr>
-            <td>Olivia Liang</td>
-            <td>Support Engineer</td>
-            <td>Singapore</td>
-            <td>64</td>
-            <td>2011/02/03</td>
-            <td>$234,500</td>
-          </tr>
-          <tr>
-            <td>Bruno Nash</td>
-            <td>Software Engineer</td>
-            <td>London</td>
-            <td>38</td>
-            <td>2011/05/03</td>
-            <td>$163,500</td>
-          </tr>
-          <tr>
-            <td>Sakura Yamamoto</td>
-            <td>Support Engineer</td>
-            <td>Tokyo</td>
-            <td>37</td>
-            <td>2009/08/19</td>
-            <td>$139,575</td>
-          </tr>
-          <tr>
-            <td>Thor Walton</td>
-            <td>Developer</td>
-            <td>New York</td>
-            <td>61</td>
-            <td>2013/08/11</td>
-            <td>$98,540</td>
-          </tr>
-          <tr>
-            <td>Finn Camacho</td>
-            <td>Support Engineer</td>
-            <td>San Francisco</td>
-            <td>47</td>
-            <td>2009/07/07</td>
-            <td>$87,500</td>
-          </tr>
-          <tr>
-            <td>Serge Baldwin</td>
-            <td>Data Coordinator</td>
-            <td>Singapore</td>
-            <td>64</td>
-            <td>2012/04/09</td>
-            <td>$138,575</td>
-          </tr>
-          <tr>
-            <td>Zenaida Frank</td>
-            <td>Software Engineer</td>
-            <td>New York</td>
-            <td>63</td>
-            <td>2010/01/04</td>
-            <td>$125,250</td>
-          </tr>
-          <tr>
-            <td>Zorita Serrano</td>
-            <td>Software Engineer</td>
-            <td>San Francisco</td>
-            <td>56</td>
-            <td>2012/06/01</td>
-            <td>$115,000</td>
-          </tr>
-          <tr>
-            <td>Jennifer Acosta</td>
-            <td>Junior Javascript Developer</td>
-            <td>Edinburgh</td>
-            <td>43</td>
-            <td>2013/02/01</td>
-            <td>$75,650</td>
-          </tr>
-          <tr>
-            <td>Cara Stevens</td>
-            <td>Sales Assistant</td>
-            <td>New York</td>
-            <td>46</td>
-            <td>2011/12/06</td>
-            <td>$145,600</td>
-          </tr>
-          <tr>
-            <td>Hermione Butler</td>
-            <td>Regional Director</td>
-            <td>London</td>
-            <td>47</td>
-            <td>2011/03/21</td>
-            <td>$356,250</td>
-          </tr>
-          <tr>
-            <td>Lael Greer</td>
-            <td>Systems Administrator</td>
-            <td>London</td>
-            <td>21</td>
-            <td>2009/02/27</td>
-            <td>$103,500</td>
-          </tr>
-          <tr>
-            <td>Jonas Alexander</td>
-            <td>Developer</td>
-            <td>San Francisco</td>
-            <td>30</td>
-            <td>2010/07/14</td>
-            <td>$86,500</td>
-          </tr>
-          <tr>
-            <td>Shad Decker</td>
-            <td>Regional Director</td>
-            <td>Edinburgh</td>
-            <td>51</td>
-            <td>2008/11/13</td>
-            <td>$183,000</td>
-          </tr>
-          <tr>
-            <td>Michael Bruce</td>
-            <td>Javascript Developer</td>
-            <td>Singapore</td>
-            <td>29</td>
-            <td>2011/06/27</td>
-            <td>$183,000</td>
-          </tr>
-          <tr>
-            <td>Donna Snider</td>
-            <td>Customer Support</td>
-            <td>New York</td>
-            <td>27</td>
-            <td>2011/01/25</td>
-            <td>$112,000</td>
+          <tr ng-repeat="item in alldata">
+            <td ng-show="critere.nom">{{item.compteemploi.nom}}</td>
+            <td ng-show="critere.prenom">{{item.compteemploi.prenom}}</td>
+            <td ng-show="critere.adresse">{{item.compteemploi.adresse}}</td>
+            <td ng-show="critere.genre">{{item.compteemploi.sexe}}</td>
+            <td ng-show="critere.indicatif">{{item.compteemploi.indicatif}}</td>
+            <td ng-show="critere.telephone">{{item.compteemploi.telephone}}</td>
+            <td ng-show="critere.telephonesecondaire">{{item.compteemploi.telephonesecondaire}}</td>
+            <td ng-show="critere.email">{{item.compteemploi.email}}</td>
+            <td ng-show="critere.emailsecondaire">{{item.compteemploi.emailsecondaire}}</td>
+            <td ng-show="critere.datedenaissance">{{item.compteemploi.datedenaissance}}</td>
+            <td ng-show="critere.lieudenaissance">{{item.compteemploi.lieudenaissance}}</td>
+            <td ng-show="critere.compte">{{item.compteemploi.etatcompte}}</td>
+            <td ng-show="critere.demande">{{item.etatdemande}}</td>
+            <td ng-show="critere.dossier">{{item.compteemploi.etape}}</td>
+            <td ng-show="critere.niveau">{{item.compteemploi.niveauetude}}</td>
+            <td ng-show="critere.discipline">{{item.compteemploi.discipline}}</td>
+            <td ng-show="critere.specialite">{{item.compteemploi.specialite}}</td>
+            <td ng-show="critere.appellation">{{item.compteemploi.appellation}}</td>
+            <td ng-show="critere.type">{{item.compteemploi.type}}</td>
+            <td ng-show="critere.identifiantphoto">pas encore rempli</td>
+            <td ng-show="critere.nationalite">{{item.compteemploi.natinalite}}</td>
+            <td ng-show="critere.ufr">{{item.poste.nom}}</td>
+            <td ng-show="critere.departement">pas encore remplis</td>
+            <td ng-show="critere.filiere">pas encore remplis</td>
+            <td ng-show="critere.uniten">pas encore remplis</td>
+            <td ng-show="critere.programme">pas encore remplis</td>
+            <td ng-show="critere.matiere">pas encore remplis</td>
+            <td ng-show="critere.paysdenassance">pas encore remplis</td>
+            <td ng-show="critere.residence">{{item.residence}}</td>
           </tr>
           </tbody>
         </table>

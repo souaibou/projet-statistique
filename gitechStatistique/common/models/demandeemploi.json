@@ -16,6 +16,11 @@
         "model": "ufr",
         "type": "belongsTo",
         "foreignKey": "idufr3"
+      },
+      "poste": {
+        "model": "poste",
+        "type": "belongsTo",
+        "foreignKey": "idposte"
       }
     }
   },

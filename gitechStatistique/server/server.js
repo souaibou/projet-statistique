@@ -21,6 +21,17 @@ app.start = function() {
   });
 };
 
+
+app.get("/alldata", function(req, res, next){
+  app.models.demandeemploi.find({include: ['compteemploi', 'poste', 'ufr']}, function(err,result){
+    res.send(result);
+  });
+  /*app.models.demandeemploi.find({},function(err,result){
+    console.log("resulat",result);
+    res.send(result);
+  });*/
+});
+
 // Bootstrap the application, configure models, datasources and middleware.
 //Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname, function(err) {
