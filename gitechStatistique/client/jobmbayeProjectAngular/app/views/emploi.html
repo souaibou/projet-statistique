@@ -52,10 +52,10 @@
                         <div id="c1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input ng-model="stat.compte" type="checkbox" checked><span class="lever"></span>Tous les comptes</label></div> 
+                               <div class="switch"><label><input ng-model="stat.etatcompte" type="checkbox" checked><span class="lever"></span>Tous les comptes</label></div> 
                             </div>
-                            <div ng-repeat="compte in comptes" ng-show="!stat.compte" class="row">
-                               <div class="switch"><label><input ng-model="stat.comptes[compte]" type="checkbox" checked><span class="lever"></span>{{compte}}</label></div> 
+                            <div ng-repeat="compte in etatcomptes" ng-show="!stat.etatcompte" class="row">
+                               <div class="switch"><label><input ng-model="statReq.etatcomptes[compte]" type="checkbox" checked><span class="lever"></span>{{compte}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -74,10 +74,10 @@
                         <div id="c2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input ng-model="stat.genre" type="checkbox" checked><span class="lever"></span>Tous les genres</label></div> 
+                               <div class="switch"><label><input ng-model="stat.sexe" type="checkbox" checked><span class="lever"></span>Tous les genres</label></div> 
                             </div>
-                            <div ng-repeat="genre in genres" ng-show="!stat.genre" class="row">
-                               <div class="switch"><label><input ng-model="stat.genres[genre]" type="checkbox" checked><span class="lever"></span>{{genre}}</label></div> 
+                            <div ng-repeat="genre in sexes" ng-show="!stat.sexe" class="row">
+                               <div class="switch"><label><input ng-model="statReq.sexes[genre]" type="checkbox" checked><span class="lever"></span>{{genre}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -96,10 +96,10 @@
                         <div id="c3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input ng-model="stat.dossier" type="checkbox" checked><span class="lever"></span>Tous les dossiers</label></div> 
+                               <div class="switch"><label><input ng-model="stat.etape" type="checkbox" checked><span class="lever"></span>Tous les dossiers</label></div> 
                             </div>
-                            <div ng-repeat="dossier in dossiers" ng-show="!stat.dossier" class="row">
-                               <div class="switch"><label><input ng-model="stat.dossiers[dossier]" type="checkbox" checked><span class="lever"></span>{{dossier}}</label></div> 
+                            <div ng-repeat="dossier in etapes" ng-show="!stat.etape" class="row">
+                               <div class="switch"><label><input ng-model="statReq.etapes[dossier]" type="checkbox" checked><span class="lever"></span>{{dossier}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -121,10 +121,10 @@
                         <div id="c4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input ng-model="stat.demande" type="checkbox" checked><span class="lever"></span>Tous les demandes</label></div> 
+                               <div class="switch"><label><input ng-model="stat.etatdemande" type="checkbox" checked><span class="lever"></span>Tous les demandes</label></div> 
                             </div>
                             <div class="row">
-                               <div ng-repeat="demande in demandes" ng-show="!stat.demande" class="switch"><label><input ng-model="stat.demandes[demande]" type="checkbox" checked><span class="lever"></span>{{demande}}</label></div> 
+                               <div ng-repeat="demande in etatdemandes" ng-show="!stat.etatdemande" class="switch"><label><input ng-model="statReq.etatdemandes[demande]" type="checkbox" checked><span class="lever"></span>{{demande}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -146,7 +146,7 @@
                                <div class="switch"><label><input ng-model="stat.ufr" type="checkbox" checked><span class="lever"></span>Tous les UFRs</label></div> 
                             </div>
                             <div ng-show="!stat.ufr" ng-repeat="ufr in ufrs" class="row">
-                               <div class="switch"><label><input ng-model="stat.ufrs[ufr.nom]" type="checkbox" checked><span class="lever"></span>{{ufr.nom}}</label></div> 
+                               <div class="switch"><label><input ng-model="statReq.ufrs[ufr.nom]" type="checkbox" checked><span class="lever"></span>{{ufr.nom}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -168,7 +168,7 @@
                                <div class="switch"><label><input ng-model="stat.departement" type="checkbox" checked><span class="lever"></span>Tous les departements</label></div> 
                             </div>
                             <div ng-show="!stat.departement" ng-repeat="departement in departements" class="row">
-                               <div class="switch"><label><input ng-model="stat.departements[departement.nom]" type="checkbox" checked><span class="lever"></span>{{departement.nom}}</label></div> 
+                               <div class="switch"><label><input ng-model="statReq.departements[departement.nom]" type="checkbox" checked><span class="lever"></span>{{departement.nom}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -193,7 +193,7 @@
                                <div class="switch"><label><input ng-model="stat.filiere" type="checkbox" checked><span class="lever"></span>Toutes les filieres</label></div> 
                             </div>
                             <div ng-show="!stat.filiere" ng-repeat="filiere in filieres" class="row">
-                               <div class="switch"><label><input ng-model="stat.filieres[filiere.nom]" type="checkbox" checked><span class="lever"></span>{{filiere.nom}}</label></div> 
+                               <div class="switch"><label><input ng-model="statReq.filieres[filiere.nom]" type="checkbox" checked><span class="lever"></span>{{filiere.nom}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -215,7 +215,7 @@
                                <div class="switch"><label><input ng-model="stat.unitens" type="checkbox" checked><span class="lever"></span>Toutes les unités d'enseignements</label></div> 
                             </div>
                             <div ng-show="!stat.uniten" ng-repeat="uniten in unitens" class="row">
-                               <div class="switch"><label><input ng-model="stat.unitens[uniten.nom]" type="checkbox" checked><span class="lever"></span>{{uniten.nom}}</label></div> 
+                               <div class="switch"><label><input ng-model="statReq.unitens[uniten.nom]" type="checkbox" checked><span class="lever"></span>{{uniten.nom}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -237,7 +237,7 @@
                                <div class="switch"><label><input ng-model="stat.programme" type="checkbox" checked><span class="lever"></span>Tous les programmes</label></div> 
                             </div>
                             <div ng-show="!stat.programme" ng-repeat="programme in programmes" class="row">
-                               <div class="switch"><label><input ng-model="stat.programmes[programme.nom]" type="checkbox" checked><span class="lever"></span>{{programme.nom}}</label></div> 
+                               <div class="switch"><label><input ng-model="statReq.programmes[programme.nom]" type="checkbox" checked><span class="lever"></span>{{programme.nom}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -262,7 +262,7 @@
                                <div class="switch"><label><input ng-model="stat.matiere" type="checkbox" checked><span class="lever"></span>Tous les matiéres</label></div> 
                             </div>
                             <div ng-show="!stat.matiere" ng-repeat="matiere in matieres" class="row">
-                               <div class="switch"><label><input ng-model="stat.matieres[matiere.nom]" type="checkbox" checked><span class="lever"></span>{{matiere.nom}}</label></div> 
+                               <div class="switch"><label><input ng-model="statReq.matieres[matiere.nom]" type="checkbox" checked><span class="lever"></span>{{matiere.nom}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -281,10 +281,10 @@
                         <div id="c11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input  ng-model="stat.niveau" type="checkbox" checked><span class="lever"></span><strong>Tous les niveaux</strong></label></div> 
+                               <div class="switch"><label><input  ng-model="stat.niveauetude" type="checkbox" checked><span class="lever"></span><strong>Tous les niveaux</strong></label></div> 
                             </div>
-                            <div ng-show="!stat.niveau" ng-repeat="niveau in niveauEtudes" class="row">
-                               <div class="switch"><label><input ng-model="stat.niveaux[niveau]" type="checkbox" checked><span class="lever"></span><strong>{{niveau}}</strong></label></div> 
+                            <div ng-show="!stat.niveauetude" ng-repeat="niveau in niveauetudes" class="row">
+                               <div class="switch"><label><input ng-model="statReq.niveauetudes[niveau]" type="checkbox" checked><span class="lever"></span><strong>{{niveau}}</strong></label></div> 
                             </div>
                           </div>
                         </div>
@@ -306,7 +306,7 @@
                                <div class="switch"><label><input ng-model="stat.discipline" type="checkbox" checked><span class="lever"></span><strong>Tous les disciplines</strong></label></div> 
                             </div>
                             <div ng-show="!stat.discipline" class="row">
-                               <div ng-repeat="discipline in disciplines" class="switch"><label><input ng-model="stat.disciplines[discipline]" type="checkbox" checked><span class="lever"></span><strong>{{discipline}}</strong></label></div> 
+                               <div ng-repeat="discipline in disciplines" class="switch"><label><input ng-model="statReq.disciplines[discipline]" type="checkbox" checked><span class="lever"></span><strong>{{discipline}}</strong></label></div> 
                             </div>
                           </div>
                         </div>
@@ -331,7 +331,7 @@
                                <div class="switch"><label><input ng-model="stat.specialite" type="checkbox" checked><span class="lever"></span>Tous les spécialités</label></div> 
                             </div>
                             <div ng-show="!stat.specialite" ng-repeat="specialite in specialites" class="row">
-                               <div class="switch"><label><input ng-model="stat.specialites[specialite]" type="checkbox" checked><span class="lever"></span>{{specialite}}</label></div> 
+                               <div class="switch"><label><input ng-model="statReq.specialites[specialite]" type="checkbox" checked><span class="lever"></span>{{specialite}}</label></div> 
                             </div>
                           </div>
                         </div>
@@ -353,7 +353,7 @@
                                <div class="switch"><label><input ng-model="stat.nationalite" type="checkbox" checked><span class="lever"></span><strong>Toutes les nationalités</strong></label></div> 
                             </div>
                             <div ng-show="!stat.nationalite" ng-repeat="country in nationalites" class="row">
-                               <div class="switch"><label><input ng-model="stat.nationalites[country]" type="checkbox" checked><span class="lever"></span><strong>{{country}}</strong></label></div> 
+                               <div class="switch"><label><input ng-model="statReq.nationalites[country]" type="checkbox" checked><span class="lever"></span><strong>{{country}}</strong></label></div> 
                             </div>
                           </div>
                         </div>
@@ -372,10 +372,10 @@
                         <div id="c15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                               <div class="switch"><label><input ng-model="stat.residence" type="checkbox" checked><span class="lever"></span>Toutes les residences</label></div> 
+                               <div class="switch"><label><input ng-model="stat.indicatif" type="checkbox" checked><span class="lever"></span>Toutes les residences</label></div> 
                             </div>
-                            <div ng-show="!stat.residence" class="row">
-                               <div ng-repeat="residence in residences" class="switch"><label><input ng-model="stat.residences[residence.nom]" type="checkbox" checked><span class="lever"></span><strong>{{residence.name}}</strong></label></div> 
+                            <div ng-show="!stat.indicatif" class="row">
+                               <div ng-repeat="residence in indicatifs" class="switch"><label><input ng-model="statReq.indicatifs[residence.nom]" type="checkbox" checked><span class="lever"></span><strong>{{residence.name}}</strong></label></div> 
                             </div>
                           </div>
                         </div>
@@ -719,7 +719,7 @@
           </tr>
           </tfoot>
           <tbody>
-          <tr ng-repeat="item in alldata">
+          <tr ng-repeat="item in emplois">
             <td ng-show="critere.nom">{{item.compteemploi.nom}}</td>
             <td ng-show="critere.prenom">{{item.compteemploi.prenom}}</td>
             <td ng-show="critere.adresse">{{item.compteemploi.adresse}}</td>

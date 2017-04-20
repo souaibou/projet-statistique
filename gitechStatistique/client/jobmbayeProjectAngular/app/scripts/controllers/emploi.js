@@ -19,22 +19,24 @@ angular.module('jobmbayeProjectAngularApp')
   	$scope.unitens;
   	$scope.programmes;
     $scope.stat={};
+    $scope.statReq={};
+    $scope.resultats=[];
     //initialisation de l'affichage
-        $scope.stat.compte=true;
-        $scope.stat.demande=true;
-        $scope.stat.genre=true;
-        $scope.stat.dossier=true;
+        $scope.stat.etatcompte=true;
+        $scope.stat.etatdemande=true;
+        $scope.stat.sexe=true;
+        $scope.stat.etape=true;
         $scope.stat.ufr=true;
         $scope.stat.departement=true;
         $scope.stat.filiere=true;
         $scope.stat.programme=true;
         $scope.stat.uniten=true;
         $scope.stat.matiere=true;
-        $scope.stat.niveau=true;
+        $scope.stat.niveauetude=true;
         $scope.stat.discipline=true;
         $scope.stat.specialite=true;
         $scope.stat.nationalite=true;
-        $scope.stat.residence=true;
+        $scope.stat.indicatif=true;
         $scope.critere={};
         $scope.critere.nom=true;
         $scope.critere.prenom=true;
@@ -44,17 +46,17 @@ angular.module('jobmbayeProjectAngularApp')
         $scope.critere.dossier=true;
         $scope.critere.demande=true;
     //initialisation des views
-        $scope.niveauEtudes=[];
+        $scope.niveauetudes=[];
         $scope.disciplines=[];
         $scope.specialites=[];
         $scope.nationalites=[];
         $scope.residences=[];
         $scope.indicatifs=[];
         $scope.resultats=[];
-        $scope.comptes=[];
-	  	$scope.dossiers=[];
-	  	$scope.demandes=[];
-	  	$scope.genres=[];
+        $scope.etatcomptes=[];
+	  	$scope.etapes=[];
+	  	$scope.etatdemandes=[];
+	  	$scope.sexes=[];
 	  	$scope.matieres;
   	$scope.niveaux;
   	$scope.GrapheAafficher="Diagramme en barre";
@@ -1318,7 +1320,6 @@ angular.module('jobmbayeProjectAngularApp')
 
     $http.get("http://localhost:3000/alldata").then(function(data){
         $scope.setAllData(data.data);
-        console.log(data.data);
         $scope.getNiveauEtude(data.data,0);
         $scope.getDiscipline(data.data,0);
         $scope.getSpecialite(data.data,0);
@@ -1328,7 +1329,6 @@ angular.module('jobmbayeProjectAngularApp')
         $scope.getEatDossier(data.data,0);
         $scope.getEtatDemande(data.data,0);
         $scope.getGenre(data.data,0);
-        console.log($scope.residences);
 
     },function(err){
         console.log(err);
@@ -1346,69 +1346,75 @@ angular.module('jobmbayeProjectAngularApp')
     }
 
     $scope.getNiveauEtude = function(data,i)
-    {   for(i=0; i<data.length;i++)
+    {   
+    	for(i=0; i<data.length;i++)
         {
             if(data[i].idcompteemploi!=null)
             {
-                if(!$scope.niveauEtudes.includes(data[i].compteemploi.niveauetude))
+                if(!$scope.niveauetudes.includes(data[i].compteemploi.niveauetude))
                 {
-                    $scope.niveauEtudes.push(data[i].compteemploi.niveauetude)
+                    $scope.niveauetudes.push(data[i].compteemploi.niveauetude)
                 }
             }
         }
     }
 
     $scope.getEtatCompte = function(data,i)
-    {   for(i=0; i<data.length;i++)
+    {   
+    	for(i=0; i<data.length;i++)
         {
             if(data[i].idcompteemploi!=null)
             {
-                if(!$scope.comptes.includes(data[i].compteemploi.etatcompte))
+                if(!$scope.etatcomptes.includes(data[i].compteemploi.etatcompte))
                 {
-                    $scope.comptes.push(data[i].compteemploi.etatcompte)
+                    $scope.etatcomptes.push(data[i].compteemploi.etatcompte)
                 }
             }
         }
     }
 
     $scope.getEatDossier = function(data,i)
-    {   for(i=0; i<data.length;i++)
+    {   
+    	for(i=0; i<data.length;i++)
         {
             if(data[i].idcompteemploi!=null)
             {
-                if(!$scope.dossiers.includes(data[i].compteemploi.etape))
+                if(!$scope.etapes.includes(data[i].compteemploi.etape))
                 {
-                    $scope.dossiers.push(data[i].compteemploi.etape)
+                    $scope.etapes.push(data[i].compteemploi.etape)
                 }
             }
         }
     }
 
     $scope.getEtatDemande = function(data,i)
-    {   for(i=0; i<data.length;i++)
+    {   
+    	for(i=0; i<data.length;i++)
         {
-            if(!$scope.demandes.includes(data[i].etatdemande))
+            if(!$scope.etatdemandes.includes(data[i].etatdemande))
             {
-                $scope.demandes.push(data[i].etatdemande)
+                $scope.etatdemandes.push(data[i].etatdemande)
             }
         }
     }
 
     $scope.getGenre = function(data,i)
-    {   for(i=0; i<data.length;i++)
+    {  
+     for(i=0; i<data.length;i++)
         {
             if(data[i].idcompteemploi!=null)
             {
-                if(!$scope.genres.includes(data[i].compteemploi.sexe))
+                if(!$scope.sexes.includes(data[i].compteemploi.sexe))
                 {
-                    $scope.genres.push(data[i].compteemploi.sexe)
+                    $scope.sexes.push(data[i].compteemploi.sexe)
                 }
             }
         }
     }
 
     $scope.getNationalite = function(data,i)
-    {   for(i=0; i<data.length;i++)
+    {   
+    	for(i=0; i<data.length;i++)
         {
             if(data[i].idcompteemploi!=null)
             {
@@ -1421,38 +1427,39 @@ angular.module('jobmbayeProjectAngularApp')
     }
 
     $scope.getResidence = function(data,i)
-    {   var j;
+    {   
+    	var j;
         var pays = {};
         for(i=0; i<data.length;i++)
         {
             if(data[i].idcompteemploi!=null)
             {
-                if(!$scope.indicatifs.includes(data[i].compteemploi.indicatif))
+                if(!$scope.residences.includes(data[i].compteemploi.indicatif))
                 {
-                    $scope.indicatifs.push(data[i].compteemploi.indicatif)
-                }
-            }
-        }
-
-        for(i=0; i<$scope.indicatifs.length;i++)
-        {
-            for(j=0; j<$scope.indicatifPays.length;j++)
-            {
-                if("+" + $scope.indicatifs[i]==$scope.indicatifPays[j].dial_code)
-                {
-                    $scope.residences.push($scope.indicatifPays[j]);
+                    $scope.residences.push(data[i].compteemploi.indicatif)
                 }
             }
         }
 
         for(i=0; i<$scope.residences.length;i++)
         {
+            for(j=0; j<$scope.indicatifPays.length;j++)
+            {
+                if("+" + $scope.residences[i]==$scope.indicatifPays[j].dial_code)
+                {
+                    $scope.indicatifs.push($scope.indicatifPays[j]);
+                }
+            }
+        }
+
+        for(i=0; i<$scope.indicatifs.length;i++)
+        {
             for(j=0; j<i+1;j++)
             {
-                if($scope.residences[i].dial_code==$scope.residences[j].dial_code)
+                if($scope.indicatifs[i].dial_code==$scope.indicatifs[j].dial_code)
                 {
-                    $scope.residences[i].name += "/" + $scope.residences[j].name;
-                    $scope.residences.splice(j,1);
+                    $scope.indicatifs[i].name += "/" + $scope.indicatifs[j].name;
+                    $scope.indicatifs.splice(j,1);
                 }
             }
         }
@@ -1491,7 +1498,85 @@ angular.module('jobmbayeProjectAngularApp')
 
     $scope.faireRequete = function()
     {
-        $scope.resultats=[];
+    	$scope.$apply;
+    	var resultats=[];
+        $scope.resultats=$scope.alldata;
+        for(var l=0;l<Object.keys($scope.stat).length;l++)
+	    {
+	     	resultats=[];
+        	var statTous = $scope.stat[Object.keys($scope.stat)[l]];
+			console.log(statTous);
+        	if(statTous==false || statTous== undefined)
+			{
+		        for(var i=0;i<Object.keys($scope.statReq).length;i++)
+		        {	
+	        		var statAttribut = Object.keys($scope.statReq[Object.keys($scope.statReq)[i]])
+	        		if(Object.keys($scope.statReq)[i].substr(0,Object.keys($scope.statReq)[i].length-1)==Object.keys($scope.stat)[l])
+	        		{	
+				    	var keysVals=Object.keys(statAttribut);//statAttribut
+				        //console.log($scope.stat.natures);
+				        //$scope.affiche.nature=false;
+				        for(var j=0;j<$scope.resultats.length;j++)
+			            {
+			              for(var k=0;k<keysVals.length;k++) //[Object.keys($scope.stat)[l]]
+			                {
+			                  if($scope.resultats[j][Object.keys($scope.stat)[l]]!=undefined)
+			                  {	//console.log($scope.statReq["etatdemandes"])
+			              		//console.log($scope.statReq[Object.keys($scope.statReq)[i]][statAttribut[k]])
+			                  	//console.log(statAttribut[keysVals[k]])   
+			                  	if($scope.resultats[j][Object.keys($scope.stat)[l]]== statAttribut[k] && $scope.statReq[Object.keys($scope.statReq)[i]][statAttribut[k]]==true)
+			                  	{
+			                  		resultats.push($scope.resultats[j]);
+			                  	}
+			                  }
+			                  else
+			                  {
+			                  	if($scope.resultats[j].idcompteemploi!=null)
+				                  {
+				                  	if($scope.resultats[j].compteemploi[Object.keys($scope.stat)[l]]== statAttribut[k] && $scope.statReq[Object.keys($scope.statReq)[i]][statAttribut[k]]==true)
+					                  {
+					                    resultats.push($scope.resultats[j]);
+					                  }
+				                  }
+			                  }
+			                }
+			            }
+	        		}
+	        	}
+	     		$scope.resultats=resultats;
+	        }
+        }
+		//console.log($scope.resultats)
+        $scope.emplois=$scope.resultats;
+    }
+
+    $scope.filter=function(statAttribut,statTous) 
+    { 
+    	var resultats=[];
+    	var keysVals=Object.keys($scope.statReq.genres);//statAttribut
+        //console.log($scope.stat.natures);
+        if(statTous==false || statTous== undefined)
+        {     
+          //$scope.affiche.nature=false;
+          for(var j=0;j<$scope.resultats.length;j++)
+            {
+              for(var k=0;k<keysVals.length;k++)
+                { 
+                  if($scope.resultats[j].idcompteemploi!=null)
+                  {
+                  	if($scope.resultats[j].compteemploi.sexe == keysVals[k] && statAttribut[keysVals[k]]==true)
+	                  {
+	                    resultats.push($scope.resultats[j]);
+	                  }
+                  }
+                }
+            }
+          $scope.resultats=resultats;
+        }
+        else
+        {
+          //$scope.affiche.nature=true;
+        }
     }
 
     // Fin gestion des statistiques
@@ -1621,5 +1706,10 @@ Highcharts.chart('pieChar', {
         ]
     }]
 });
+
+
+window.addEventListener("change", function(){
+    $scope.faireRequete();
+},false);
 
 });
