@@ -165,7 +165,7 @@ angular.module('jobmbayeProjectAngularApp')
             {
             "name": "Belarus",
             "dial_code": "+375",
-            "code": "BY"
+			"code": "BY"
             },
             {
             "name": "Belgium",
@@ -1463,7 +1463,6 @@ angular.module('jobmbayeProjectAngularApp')
                 }
             }
         }
-
     }
 
     $scope.getDiscipline = function(data,i)
@@ -1498,7 +1497,6 @@ angular.module('jobmbayeProjectAngularApp')
 
     $scope.faireRequete = function()
     {
-    	$scope.$apply;
     	var resultats=[];
         $scope.resultats=$scope.alldata;
         for(var l=0;l<Object.keys($scope.stat).length;l++)
@@ -1548,6 +1546,50 @@ angular.module('jobmbayeProjectAngularApp')
         }
 		//console.log($scope.resultats)
         $scope.emplois=$scope.resultats;
+       	// Graphe stat view
+        var statpart={};
+        $scope.eff={};
+        var tabresult=[];
+        var trouve;
+        var choix={};
+        for(var j=0;j<$scope.resultats.length;j++)
+        {
+          trouve=false;
+          for(var i=0;i<tabresult.length;i++)
+          {
+            //if($scope.choix.libelle=="nomDepartement")
+            {
+              if($scope.resultats[j].departement[$scope.choix.libelle]==tabresult[i]['nomEff'])
+              {
+                trouve=true;
+                tabresult[i].eff+=1;
+              }
+            }
+          }
+          if(trouve==false)
+	        {
+	            statpart={};
+	            if ($scope.choix.libelle=="nomDepartement") 
+	            {
+	              statpart.nomEff=$scope.resultats[j].departement[$scope.choix.libelle];
+	            }
+	            statpart.eff=1;
+                tabresult.push(statpart);
+	        }
+        }
+        var nomGraph=[];
+        var effGraph=[];
+        for(var i=0;i<tabresult.length;i++)
+        {
+          tabDonnee=[];
+          tabDonnee[0]=tabresult[i].nomEff;
+          tabDonnee[1]=tabresult[i].eff;
+          tabaff.push(tabDonnee);
+          nomGraph.push(tabresult[i].nomEff);
+          effGraph.push(tabresult[i].eff);
+        };
+
+    	$scope.$apply();
     }
 
     $scope.filter=function(statAttribut,statTous) 
@@ -1710,6 +1752,6 @@ Highcharts.chart('pieChar', {
 
 window.addEventListener("change", function(){
     $scope.faireRequete();
-},false);
+});
 
 });
