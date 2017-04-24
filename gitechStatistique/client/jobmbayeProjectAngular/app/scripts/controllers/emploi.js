@@ -21,6 +21,8 @@ angular.module('jobmbayeProjectAngularApp')
     $scope.stat={};
     $scope.statReq={};
     $scope.resultats=[];
+    var tabaff=[];
+    var tabDonnee=[];
     //initialisation de l'affichage
         $scope.stat.etatcompte=true;
         $scope.stat.etatdemande=true;
@@ -1552,14 +1554,24 @@ angular.module('jobmbayeProjectAngularApp')
         var tabresult=[];
         var trouve;
         var choix={};
+        //console.log($scope.choix.libelle);
+        //console.log($scope.resultats[0]["etatdemande"]);
         for(var j=0;j<$scope.resultats.length;j++)
         {
           trouve=false;
           for(var i=0;i<tabresult.length;i++)
           {
-            //if($scope.choix.libelle=="nomDepartement")
+            if($scope.resultats[j].idcompteemploi==undefined)
             {
-              if($scope.resultats[j].departement[$scope.choix.libelle]==tabresult[i]['nomEff'])
+              if($scope.resultats[j][$scope.choix.libelle]==tabresult[i]['nomEff'])
+              {
+                trouve=true;
+                tabresult[i].eff+=1;
+              }
+            }
+            else
+            {
+              if($scope.resultats[j].compteemploi[$scope.choix.libelle]==tabresult[i]['nomEff'])
               {
                 trouve=true;
                 tabresult[i].eff+=1;
@@ -1569,16 +1581,21 @@ angular.module('jobmbayeProjectAngularApp')
           if(trouve==false)
 	        {
 	            statpart={};
-	            if ($scope.choix.libelle=="nomDepartement") 
+	            if ($scope.resultats[j].idcompteemploi==undefined) 
 	            {
-	              statpart.nomEff=$scope.resultats[j].departement[$scope.choix.libelle];
+	              statpart.nomEff=$scope.resultats[j][$scope.choix.libelle];
 	            }
+                else
+                {
+                  statpart.nomEff=$scope.resultats[j].compteemploi[$scope.choix.libelle];
+                }
 	            statpart.eff=1;
                 tabresult.push(statpart);
 	        }
         }
         var nomGraph=[];
         var effGraph=[];
+        tabaff=[];
         for(var i=0;i<tabresult.length;i++)
         {
           tabDonnee=[];
@@ -1588,6 +1605,79 @@ angular.module('jobmbayeProjectAngularApp')
           nomGraph.push(tabresult[i].nomEff);
           effGraph.push(tabresult[i].eff);
         };
+
+
+
+
+
+        Highcharts.chart('container', {
+            chart: {
+            renderTo: 'container',
+            type: 'column',
+            options3d: {
+                enabled: true,
+                alpha: 15,
+                beta: 15,
+                depth: 50,
+                viewDistance: 25
+            }
+            },
+            xAxis: {
+            categories: nomGraph
+             },
+            title: {
+                text: 'Chart rotation demo'
+            },
+            plotOptions: {
+                column: {
+                    depth: 25
+                }
+            },
+            series: [{
+                data: effGraph
+            }]
+        });
+
+
+        Highcharts.chart('pieChar', {
+            chart: {
+                type: 'pie',
+                options3d: {
+                    enabled: true,
+                    alpha: 45,
+                    beta: 0
+                }
+            },
+            title: {
+                text: 'Browser market shares at a specific website, 2014'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+         xAxis: {
+            categories: nomGraph
+             },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    depth: 35,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.name}'
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Effectif total',
+                data: tabaff
+            }]
+        });
+
+        
+
+
 
     	$scope.$apply();
     }
@@ -1675,65 +1765,67 @@ angular.module('jobmbayeProjectAngularApp')
     	}
     }
 
-    Highcharts.chart('container', {
-    chart: {
-        renderTo: 'container',
-        type: 'column',
-        options3d: {
-            enabled: true,
-            alpha: 15,
-            beta: 15,
-            depth: 50,
-            viewDistance: 25
-        }
-    },
-    title: {
-        text: 'Chart rotation demo'
-    },
-    subtitle: {
-        text: 'Test options by dragging the sliders below'
-    },
-    plotOptions: {
-        column: {
-            depth: 25
-        }
-    },
-    series: [{
-        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-    }]
-});
-
-
-Highcharts.chart('pieChar', {
-    chart: {
-        type: 'pie',
-        options3d: {
-            enabled: true,
-            alpha: 45,
-            beta: 0
-        }
-    },
-    title: {
-        text: 'Browser market shares at a specific website, 2014'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            depth: 35,
-            dataLabels: {
+    /*$scope.genererGraph=function(nomGraph,nomEff)
+    {
+        Highcharts.chart('container', {
+            chart: {
+            renderTo: 'container',
+            type: 'column',
+            options3d: {
                 enabled: true,
-                format: '{point.name}'
+                alpha: 15,
+                beta: 15,
+                depth: 50,
+                viewDistance: 25
             }
-        }
-    },
-    series: [{
-        type: 'pie',
-        name: 'Browser share',
-        data: [
+            },
+            title: {
+                text: 'Chart rotation demo'
+            },
+            subtitle: {
+                text: 'Test options by dragging the sliders below'
+            },
+            plotOptions: {
+                column: {
+                    depth: 25
+                }
+            },
+            series: [{
+                data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+            }]
+        });
+
+
+        Highcharts.chart('pieChar', {
+            chart: {
+                type: 'pie',
+                options3d: {
+                    enabled: true,
+                    alpha: 45,
+                    beta: 0
+                }
+            },
+            title: {
+                text: 'Browser market shares at a specific website, 2014'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    depth: 35,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.name}'
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
             ['Firefox', 45.0],
             ['IE', 26.8],
             {
@@ -1745,9 +1837,11 @@ Highcharts.chart('pieChar', {
             ['Safari', 8.5],
             ['Opera', 6.2],
             ['Others', 0.7]
-        ]
-    }]
-});
+            ]
+            }]
+        });
+    }*/
+
 
 
 window.addEventListener("change", function(){
