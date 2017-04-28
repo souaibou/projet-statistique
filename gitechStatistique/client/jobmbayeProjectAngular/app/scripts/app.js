@@ -36,8 +36,14 @@ var app=angular
         controller: 'EtudiantCtrl',
         controllerAs: 'etudiant'
       })
+      .when('/cour', {
+        templateUrl: 'views/cour.html',
+        controller: 'CourCtrl',
+        controllerAs: 'cour'
+      })
       .otherwise({
         redirectTo: '/'
       });
   })
-  .value('API_URL', 'http://localhost:3000/api/');
+  .value('API_URL', 'http://localhost:3000/api/')
+    .value('SERVER_URL' , 'http://localhost:3000');

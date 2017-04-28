@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 'use strict';
 
 var loopback = require('loopback');
@@ -21,8 +22,23 @@ app.start = function() {
   });
 };
 
+app.get('/alldataEtudiant', function(req, res, next) {
+  app.models.etudiantclasseannee.find({
+    include: {
+      relation: 'etudiant',
+      scope: {
+        include: {
+          relation: 'personne',
+        },
+      },
+    },
+  }, function(err, result) {
+    res.send(result);
+  });
+});
+
 // Bootstrap the application, configure models, datasources and middleware.
-//Sub-apps like REST API are mounted via boot scripts.
+// Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname, function(err) {
   if (err) throw err;
 
@@ -30,4 +46,3 @@ boot(app, __dirname, function(err) {
   if (require.main === module)
     app.start();
 });
-  
