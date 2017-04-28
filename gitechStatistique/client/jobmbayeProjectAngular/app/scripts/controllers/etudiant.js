@@ -20,6 +20,8 @@ angular.module('jobmbayeProjectAngularApp')
     $scope.listeEtudiant = [];
     $scope.listeStatut = [];
     $scope.listeMention = [];
+    $scope.listeResultat = [];
+    $scope.listeGenre = [];
 
 
     //declaration des variables critere de selection
@@ -60,6 +62,10 @@ angular.module('jobmbayeProjectAngularApp')
       console.log($scope.listeMention);
       $scope.getNiveau(data.data , 0);
       console.log($scope.niveauAnnee);
+      $scope.getResultat(data.data , 0);
+      console.log($scope.listeResultat);
+      $scope.getGenre(data.data , 0);
+      console.log($scope.listeGenre);
     },function (err) {
       console.log(err);
     });
@@ -84,7 +90,30 @@ angular.module('jobmbayeProjectAngularApp')
       console.log($scope.listeNationalite);
     });
 
+    $scope.getResultat = function(data , i){
+      for(i = 0 ; i < data.length ; i++){
+        if(data[i].id != null){
+          if(data[i].resultat != "" && data[i].resultat != null){
+            if(!$scope.listeResultat.includes(data[i].resultat)){
+              $scope.listeResultat.push(data[i].resultat);
+            }
+          }
+        }
+      }
+    }
 
+    $scope.getGenre = function(data , i ){
+      for(i = 0 ; i < data.length ; i++){
+        if(data[i].id != null){
+          if(data[i].etudiant.personne.sexe != "" && data[i].etudiant.personne.sexe != null){
+            if(!$scope.listeGenre.includes(data[i].etudiant.personne.sexe)){
+              $scope.listeGenre.push(data[i].etudiant.personne.sexe);
+            }
+          }
+        }
+      }
+    }
+     
     $scope.getStatut = function (data, i) {
       for(i=0 ; i < data.length ; i++){
         if(data[i].id != null){
