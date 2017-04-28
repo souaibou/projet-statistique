@@ -57,14 +57,8 @@
                             <div class="row">
                                <div class="switch"><label><input type="checkbox" ng-model="stat.genre" checked><span class="lever"></span>Tout les genres</label></div>
                             </div>
-                            <div class="row" ng-show="!stat.genre">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Homme</label></div>
-                            </div>
-                            <div class="row" ng-show="!stat.genre">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Femme</label></div>
-                            </div>
-                            <div class="row" ng-show="!stat.genre">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Autre</label></div>
+                            <div class="row" ng-show="!stat.genre" ng-repeat="genre in  listeGenre">
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{genre}}</label></div>
                             </div>
                           </div>
                         </div>
@@ -85,14 +79,8 @@
                             <div class="row">
                               <div class="switch"><label><input ng-model="stat.resultat" type="checkbox" checked><span class="lever"></span>TOUT les resultats</label></div>
                             </div>
-                            <div class="row" ng-show="!stat.resultat">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>NON_DEFINI</label></div>
-                            </div>
-                            <div class="row" ng-show="!stat.resultat">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>REUSSITE</label></div>
-                            </div>
-                            <div class="row" ng-show="!stat.resultat">
-                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>ECHEC</label></div>
+                            <div class="row" ng-show="!stat.resultat" ng-repeat="result in listResultat">
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{result}}</label></div>
                             </div>
                           </div>
                         </div>
