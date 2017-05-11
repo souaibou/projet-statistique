@@ -1,5 +1,5 @@
 <div class="block-header">
-  <h2>MAIN > cour</h2>
+    <h2>MAIN > Cour</h2>
 </div>
 <div class="panel panel-primary">
   <div class="panel-heading" role="tab" id="headingTwo_1">
@@ -38,7 +38,7 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                   <div role="tabpanel" class="tab-pane animated fade in active" id="home_with_icon_title">
-                    <!-- Premiere ligne -->
+                  <!-- Premiere ligne -->
                     <div class="row">
                       <br>
                       <div class="panel  borderBottom col-md-4">
@@ -46,7 +46,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c1" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Sexe
+                              Statut 
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c1" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -55,13 +55,10 @@
                         <div id="c1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Homme</label></div>
+                               <div class="switch"><label><input type="checkbox" ng-model="stat.statut" checked><span class="lever"></span>Tous les statuts</label></div>
                             </div>
-                            <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Femme</label></div>
-                            </div>
-                            <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Autre</label></div>
+                            <div class="row" ng-show="!stat.statut" ng-repeat="statut in  listeStatut">
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{statut}}</label></div>
                             </div>
                           </div>
                         </div>
@@ -71,7 +68,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c2" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Résultat
+                              Moyenne Classe 
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c2" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -80,13 +77,10 @@
                         <div id="c2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>NON_DEFINI</label></div>
+                              <div class="switch"><label><input ng-model="stat.moyenne" type="checkbox" checked><span class="lever"></span>Toutes les moyennes</label></div>
                             </div>
-                            <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>REUSSITE</label></div>
-                            </div>
-                            <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>ECHEC</label></div>
+                            <div class="row" ng-show="!stat.moyenne" ng-repeat="moyenne in listeMoyenneClasse">
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{moyenne}}</label></div>
                             </div>
                           </div>
                         </div>
@@ -96,7 +90,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c3" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Nationalité
+                              Nom Matière 
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c3" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -106,23 +100,26 @@
                           <div class="panel-body">
                             <div class="row">
                               <div class="col-md-12">
-                                <select class="form-control">
-                                  <option value="">........</option>
-                                </select>
+                                <div class="row">
+                                  <div class="switch"><label><input type="checkbox" ng-model="stat.nomMatiere" checked><span class="lever"></span>Toutes les matières</label></div>
+                                </div>
+                                <div class="row" ng-show="!stat.nomMatiere" ng-repeat="matiere in listeNomMatiere">
+                                  <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{ matiere }}</label></div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <!-- Deuxieme ligne -->
+                  <!-- Deuxieme ligne -->
                     <div class="row">
                       <div class="panel  borderBottom col-md-4">
                         <div class="panel-heading" role="tab" id="col_4">
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c4" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Statut
+                              Année Scolaire
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c4" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -131,28 +128,10 @@
                         <div id="c4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>ADMIS</label></div>
+                              <div class="switch"><label><input ng-model="stat.anneeScolaire" type="checkbox" checked><span class="lever"></span>Toutes les années</label></div>
                             </div>
-                            <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>INSCRIT</label></div>
-                            </div>
-                            <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>REDOUBLANT</label></div>
-                            </div>
-                            <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>REINSCRIT</label></div>
-                            </div>
-                            <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>SUSPENDU</label></div>
-                            </div>
-                            <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>EXCLU</label></div>
-                            </div>
-                            <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>FINISSANT</label></div>
-                            </div>
-                            <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>AUTRE</label></div>
+                            <div class="row" ng-show="!stat.anneeScolaire" ng-repeat="anneeScolaire in listeAnneeScolaire">
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{ anneeScolaire }}</label></div>
                             </div>
                           </div>
                         </div>
@@ -162,7 +141,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c5" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Niveau Année
+                              Satut Session
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c5" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -171,7 +150,10 @@
                         <div id="c5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>........</label></div>
+                              <div class="switch"><label><input type="checkbox" ng-model="stat.statutSession" checked><span class="lever"></span>Tous les status</label></div>
+                            </div>
+                            <div class="row" ng-show="!stat.statutSession" ng-repeat="statutSession in listeStatutSession">
+                               <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{ statutSession }}</label></div>
                             </div>
                           </div>
                         </div>
@@ -181,7 +163,7 @@
                           <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c6" aria-expanded="false"
                                aria-controls="collapseTwo_1">
-                              Mention
+                              Numéro Session
                             </a>
                             <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c6" aria-expanded="false"
                                aria-controls="collapseTwo_1"></i>
@@ -190,10 +172,35 @@
                         <div id="c6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Tres Bien</label></div>
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Assez Bien</label></div>
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Bien</label></div>
-                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Passable</label></div>
+                               <div class="switch"><label><input type="checkbox" ng-model="stat.numeroSession" checked><span class="lever"></span>Toutes les sessions</label></div>
+                            </div>
+                            <div class="row" ng-show="!stat.numeroSession" ng-repeat="numero in listeNumeroSession">
+                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{numero}}</label></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- troisieme ligne -->
+                    <div class="row">
+                      <div class="panel borderBottom col-md-4">
+                        <div class="panel-heading" role="tab" id="col_6">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c7" aria-expanded="false"
+                               aria-controls="collapseTwo_1">
+                              Coefficient
+                            </a>
+                            <i class="fa fa-hand-o-left pull-right" data-toggle="collapse" data-parent="#accordion_1" href data-target="#c7" aria-expanded="false"
+                               aria-controls="collapseTwo_1"></i>
+                          </h4>
+                        </div>
+                        <div id="c7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
+                          <div class="panel-body">
+                            <div class="row">
+                               <div class="switch"><label><input type="checkbox" ng-model="stat.coeffSessionCour" checked><span class="lever"></span>Tous les coefficients</label></div>
+                            </div>
+                            <div class="row" ng-show="!stat.coeffSessionCour" ng-repeat="coeff in listeCoefficient">
+                              <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>{{coeff}}</label></div>
                             </div>
                           </div>
                         </div>
@@ -204,26 +211,60 @@
                     <div class="row">
                       <div class="col-md-3">
                         <div class="row">
-                          <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Element4</label></div>
+                          <div class="switch"><label><input ng-model="critere.cour" type="checkbox" checked><span class="lever"></span>Nom Cour</label></div>
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="row">
-                          <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Element4</label></div>
+                          <div class="switch"><label><input ng-model="critere.moyenneClasse" type="checkbox" checked><span class="lever"></span>Moyenne Classe</label></div>
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="row">
-                          <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Element4</label></div>
+                          <div class="switch"><label><input ng-model="critere.statutCour" type="checkbox" checked><span class="lever"></span>Statut Cour</label></div>
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="row">
-                          <div class="switch"><label><input type="checkbox" checked><span class="lever"></span>Element4</label></div>
+                          <div class="switch"><label><input ng-model="critere.nomMatiere" type="checkbox" checked><span class="lever"></span>Nom Matière</label></div>
                         </div>
                       </div>
                     </div>
-
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="row">
+                          <div class="switch"><label><input ng-model="critere.numSession" type="checkbox" checked><span class="lever"></span>Numéro Session</label></div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                          <div class="switch"><label><input ng-model="critere.statutSession" type="checkbox" checked><span class="lever"></span>Statut Session</label></div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                          <div class="switch"><label><input ng-model="critere.coeffSessionCour" type="checkbox" checked><span class="lever"></span>Coefficient Session Cour</label></div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                          <div class="switch"><label><input ng-model="critere.profil" type="checkbox" checked><span class="lever"></span>Profil</label></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="row">
+                          <div class="switch"><label><input ng-model="critere.nbrCreditMatiere" type="checkbox" checked><span class="lever"></span>Nombre Credit Matière</label></div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                          <div class="switch"><label><input ng-model="critere.anneeScolaireSession" type="checkbox" checked><span class="lever"></span>Année Scolaire Session</label></div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -240,44 +281,44 @@
 <div class="row" ng-show="affichageGraphe">
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card">
-      <div class="header">
-        <h2>
-          Critére d'affichage
-        </h2>
-      </div>
-      <div class="body">
-        <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="option" name="group1" type="radio" id="test2" aria-invalid="false" style=""> <label class="augText" for="test2">Option</label> </p>
-        <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="formation" name="group1" type="radio" id="test3" aria-invalid="false" style=""> <label class="augText" for="test3">Formation</label> </p>
-      </div>
+        <div class="header">
+            <h2>
+                Critére d'affichage
+            </h2>
+        </div>
+        <div class="body">
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="option" name="group1" type="radio" id="test2" aria-invalid="false" style=""> <label class="augText" for="test2">Option</label> </p>
+          <p> <input class="with-gap ng-valid ng-not-empty ng-dirty ng-touched" ng-model="choix.libelle" value="formation" name="group1" type="radio" id="test3" aria-invalid="false" style=""> <label class="augText" for="test3">Formation</label> </p>
+        </div>
     </div>
   </div>
   <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
     <div class="card">
-      <div class="header">
-        <div class="row">
-          <div class="col-md-8">
-            <select ng-change="changeTypeGraphe();" ng-model="GrapheAafficher" class="form-control">
-              <option>Diagramme en barre</option>
-              <option>Diagramme en courbe</option>
-              <option>Diagramme circulaire</option>
-              <option>Diagramme en pyramide</option>
-              <option>Diagramme en surface</option>
-            </select>
-          </div>
-          <div class="col-md-4">
+        <div class="header">
+          <div class="row">
+            <div class="col-md-8">
+              <select ng-change="changeTypeGraphe();" ng-model="GrapheAafficher" class="form-control">
+                <option>Diagramme en barre</option>
+                <option>Diagramme en courbe</option>
+                <option>Diagramme circulaire</option>
+                <option>Diagramme en pyramide</option>
+                <option>Diagramme en surface</option>
+              </select>
+            </div>
+            <div class="col-md-4">
             <button ng-click="changeGrapheTableau();" class="btn btn-primary fa fa-bar-chart">
               Voire Tableau
             </button>
           </div>
+          </div>
         </div>
-      </div>
-      <div class="body">
-        <div class="row">
-          <div ng-show=barre id="container">Placeholder for column</div>
-          <div ng-show=circulaire id="pieChar">Placeholder for pie</div>
-          <div ng-show=pyramid id="pyramidChar">Placeholder for pyramid</div>
+        <div class="body">
+          <div class="row">
+            <div ng-show=barre id="container">Placeholder for column</div>
+            <div ng-show=circulaire id="pieChar">Placeholder for pie</div>
+            <div ng-show=pyramid id="pyramidChar">Placeholder for pyramid</div>
+          </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
@@ -292,8 +333,8 @@
           <div class="row">
             <div class="col-md-9">
               <h2 class="fa fa-table">
-                STATISTIQUE SUR LES COURS
-              </h2>
+              STATISTIQUE SUR LES COURS
+            </h2>
             </div>
             <div class="col-md-3">
               <button ng-click="changeGrapheTableau();" class="btn btn-primary fa fa-bar-chart">
@@ -306,7 +347,7 @@
           <table class="table table-bordered table-striped table-hover dataTable js-exportable">
             <thead>
             <tr>
-              <th>Name</th>
+              <th>Name</th> 
               <th>Position</th>
               <th>Office</th>
               <th>Age</th>

@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-var app=angular
+var app = angular
   .module('jobmbayeProjectAngularApp', [
     'ngAnimate',
     'ngAria',
@@ -40,6 +40,11 @@ var app=angular
         templateUrl: 'views/cour.html',
         controller: 'CourCtrl',
         controllerAs: 'cour'
+      })
+      .when('/personnel', {
+        templateUrl: 'views/personnel.html',
+        controller: 'PersonnelCtrl',
+        controllerAs: 'personnel'
       })
       .otherwise({
         redirectTo: '/'
