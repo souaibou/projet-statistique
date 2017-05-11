@@ -37,6 +37,12 @@ app.get('/alldataEtudiant', function(req, res, next) {
   });
 });
 
+app.get('/alldataCour' , function(req, res, next){
+  app.models.cour.find({include : ['matiere','session','personne','classesession']}, function (err, result) {
+      res.send(result);
+  });
+});
+
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname, function(err) {
